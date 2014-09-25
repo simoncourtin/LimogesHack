@@ -1,10 +1,982 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
-    Created on : 23 sept. 2014, 22:17:56
-    Author     : Simon
-*/
+ * Made with Dotlane
+ * Copyright 2014
+ * By François Chalifour
+ */
 
+/* ---------------------------------------------------- *\
+        Resets and overrides
+\* ---------------------------------------------------- */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    outline: none;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------- *\
+        Links and type
+\* ---------------------------------------------------- */
+
+html {
+    height: 100%;
+    font-family: "Source Sans Pro",sans-serif;
+    font-size: 62.5%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.428571429;
+    color: #333;
+    background-color: #37474f;
+}
+
+/* Titles */
+
+h1 {
+    margin: 0.6em 0;
+    font-size: 2em;
+}
+
+h2 {
+    margin: 0.3em 0;
+    font-size: 1.6em;
+    text-align: left;
+}
+
+h3 {
+    margin: 0.2em 0;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+/* Paragraphs */
+
+p {
+    display: block;
+    margin: 0 0 10px;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+}
+
+.huge,
+.lead {
+    margin-bottom: 20px;
+    font-weight: 200;
+    line-height: 1.4;
+}
+
+.lead {
+    font-size: 1.4em;
+}
+
+.huge {
+    font-size: 3em;
+}
+
+b,
+strong,
+.bold {
+    font-weight: bold;
+}
+
+i,
+em,
+.italic {
+    font-style: italic;
+}
+
+u,
+.underline {
+    text-decoration: underline;
+}
+
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img {
+    border: 0;
+}
+
+ul {
+    margin-left: 18px;
+    list-style: circle;
+}
+
+.unlisted {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+pre {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 3px;
+    overflow: auto;
+    background-color: #eee;
+}
+
+code {
+    font-family: "Source Code Pro",sans-serif;
+}
+
+p code {
+    padding: 3px;
+    border-radius: 3px;
+    background-color: #eee;
+}
+
+/* Links */
+
+a:link,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: #78909c;
+    background: transparent;
+}
+
+a.button,
+.button {
+    display: inline-block;
+    padding: 0 10px;
+    min-height: 50px;
+    min-width: 180px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 200;
+    line-height: 50px;
+    color: #fff;
+    background-color: #78909c;
+    margin: 2px;
+}
+
+.button:active,
+button:active {
+    box-shadow: 0 5px 12px 0 rgba(0,0,0,.16);
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #546e7a;
+}
+
+a.button.blue,
+.button.blue {
+    background-color: #03a9f4;
+}
+
+.button.blue:hover {
+    background-color: #039be5;
+}
+
+a.button.green,
+.button.green {
+    background-color: #689f38;
+}
+
+.button.green:hover {
+    background-color: #558b2f;
+}
+
+a.button.red,
+.button.red {
+    background-color: #f50057;
+}
+
+.button.red:hover {
+    background-color: #d74b4b;
+}
+
+a.button.gray,
+.button.gray {
+    border: 2px solid #ccc;
+    color: #ccc;
+    background-color: #fff;
+}
+
+.button.gray:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+
+/* ---------------------------------------------------- *\
+        Layout
+\* ---------------------------------------------------- */
+
+/* Change the property of your components when the background of the container is dark */
+
+/* To crop the image at the bottom */
+
+.crop-img {
+    margin-bottom: -300px;
+}
+
+@media all and (max-width:800px) {
+    .crop-img {
+        display: none;
+    }
+}
+
+/* Circle (with a picture of you for example) */
+
+.img-circle {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    line-height: 300px;
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* Huge grid (for your projects for example) */
+
+.huge-grid {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.huge-grid article .thumb {
+    float: left;
+    clear: both;
+    width: 50%;
+    margin-bottom: -6px;
+    max-height: 450px;
+    overflow: hidden;
+}
+
+.huge-grid article:nth-child(even) .thumb {
+    float: right;
+}
+
+.huge-grid article .thumb img {
+    max-width: 100%;
+}
+
+.huge-grid aside .description {
+    float: right;
+    width: 50%;
+    padding: 10px;
+    max-height: 450px;
+    background-color: #fff;
+}
+
+.huge-grid article:nth-child(even) aside .description {
+    float: left;
+}
+
+.huge-grid article aside .description .title,
+.small-grid article aside .description .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.huge-grid article aside .description .date {
+    text-align: center;
+    font-size: 1em;
+    color: #999;
+}
+
+.huge-grid article aside .description p {
+    color: #333;
+}
+
+@media all and (max-width:976px) {
+    .huge-grid article .thumb {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .huge-grid aside .description {
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .huge-grid aside .description p {
+        display: none;
+    }
+}
+
+/* Small grid */
+
+.small-grid {
+    clear: both;
+    overflow: hidden;
+}
+
+.small-grid article {
+    float: left;
+    width: 150px;
+    height: 200px;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.small-grid article .thumb {
+    width: 100%;
+    height: 150px;
+    margin-bottom: -6px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.small-grid article .thumb img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.small-grid aside .description {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+}
+
+/* Columns
+  * To split your content into columns
+  */
+
+.row {
+    overflow: hidden;
+}
+
+input[type=text] {
+    width: 95%;
+    margin-right: 2px;
+}
+
+[class*="col-"] {
+    float: left;
+    position: relative;
+    padding-right: 1.5em;
+    min-height: 1px;
+}
+
+.col-2 {
+    width: 50%;
+}
+
+.col-3 {
+    width: 33.33333333333333%;
+}
+
+.col-4 {
+    width: 25%;
+}
+
+.col-5 {
+    width: 20%;
+}
+
+[class*="col-"] {
+    padding-right: 0;
+}
+
+/* Titles for columns */
+
+/* .col-2 h2,
+.col-3 h2 {
+    border-bottom: 1px solid;
+    text-align: center;
+} */
+
+/* Columns for small screens */
+
+@media all and (max-width:640px) {
+    .col-2 {
+        clear: both;
+        width: 100%;
+        padding-right: 0;
+    }
+}
+
+@media all and (max-width:976px) {
+    .col-3,
+    .col-4 {
+        clear: both;
+        width: 100%;
+        padding-right: 0;
+    }
+}
+
+/* Paragraph styles */
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ---------------------------------------------------- *\
+        Form elements
+\* ---------------------------------------------------- */
+
+form {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 768px;
+    text-align: center;
+}
+
+form div {
+    margin-bottom: 5px;
+}
+
+button,
+input,
+select,
+textarea {
+    margin-bottom: 5px;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+button,
+input {
+    line-height: normal;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    outline: none;
+    cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    resize: vertical;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #f0f0f0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    background-color: #e7e7e7;
+}
+
+button[type="submit"],
+button[type="reset"],
+input[type="submit"],
+input[type="reset"] {
+    display: inline-block;
+    padding: 0 10px;
+    min-height: 50px;
+    min-width: 180px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 200;
+    line-height: 50px;
+    color: #fff;
+}
+
+button[type="submit"],
+input[type="submit"] {
+    background-color: #f50057;
+}
+
+button[type="reset"],
+input[type="reset"] {
+    background-color: #ddd;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+    background-color: #d74b4b;
+}
+
+button[type="reset"]:hover,
+input[type="reset"]:hover {
+    background-color: #ccc;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ---------------------------------------------------- *\
+        Page structure
+\* ---------------------------------------------------- */
+
+/* Wrap all your contents */
+
+#dotlane-wrapper {
+    position: relative;
+    min-height: 100%;
+}
+
+/* Fixed header at the top */
+
+.nav-header {
+    min-height: 80px;
+    line-height: 80px;
+    color: #fff;
+    background-color: #78909c;
+}
+
+.nav-header-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav-header-fixed + .content {
+    margin-top: 48px;
+}
+
+/* Content of the header */
+
+.nav-header-inner {
+    padding: 0;
+}
+
+/* Logo of the header */
+
+.nav-header-inner .logo {
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+
+/* Title the page */
+
+.nav-header-inner h1 {
+    display: block;
+    float: none;
+    position: relative;
+    margin: 0;
+    font-size: 28px;
+}
+
+.nav-header-inner-no-title h1 {
+    display: none;
+    float: left;
+}
+
+@media(min-width:768px) {
+    .nav-header-inner h1 {
+        display: block;
+    }
+}
+
+.nav-header-inner a {
+    color: inherit;
+}
+
+/* Navigation in the header */
+
+.nav-header-inner-right {
+    float: none;
+    margin: 0 auto;
+    min-height: 80px;
+    white-space: nowrap;
+}
+
+@media(min-width:768px) {
+    .nav-header-inner-right {
+        float: right;
+    }
+}
+
+.nav-header-inner-right ul {
+    height: 50px; /*  POURQUOI ? */
+    margin: 0;
+    text-align: center;
+}
+
+@media(min-width:768px) {
+    .nav-header-inner-right ul {
+        float: left;
+    }
+}
+
+.nav-header-inner-right ul li {
+    display: inline-block;
+}
+
+.nav-header-inner-right ul li a,
+.nav-header-inner-right ul li a:focus,
+.nav-header-inner-right ul li a:active {
+    display: block;
+    padding: 0 16px;
+}
+
+.nav-header-inner-right ul li a.current {
+    background-color: rgba(255,255,255,.2);
+}
+
+.nav-header-inner-right ul li a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Wrap your containers */
+
+.content {
+    padding: 48px 0;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.container-header {
+    padding-top: 0;
+}
+
+@media(max-width:768px) {
+    .container-header {
+        padding: 0;
+    }
+}
+
+@media(min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media(min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media(min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+.h-500 {
+    min-height: 480px;
+}
+
+/* Sections you want to talk about */
+
+.content {
+    background-color: #fff;
+}
+
+.content:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+/* Main container */
+
+.fixed {
+    background-attachment: fixed;
+}
+
+/* Footer of the page */
+
+.nav-footer {
+    position: relative;
+    padding: 32px;
+    color: #fff;
+    background-color: #37474f;
+}
+
+.nav-footer a {
+    color: #fff;
+}
+
+a.control-button-top {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    margin-left: -24px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 24px 24px 24px;
+    border-color: transparent transparent #37474f transparent;
+    text-align: center;
+    font-size: 2em;
+    line-height: 40px;
+    color: rgba(255,255,255,.8);
+    -webkit-transition: top .3s;
+    -moz-transition: top .3s;
+    -ms-transition: top .3s;
+    -o-transition: top .3s;
+    transition: top .3s;
+}
+
+a.control-button-top:hover {
+    top: -22px;
+}
+
+/* ---------------------------------------------------- *\
+        Colors
+\* ---------------------------------------------------- */
+
+/* Font color */
+
+.text-white {
+    color: #fff;
+}
+
+/* Background color */
+
+.grey-200 {
+    background-color: #f7f7f7;
+}
+
+.blue-grey-200 {
+    background-color: #b0bec5;
+}
+
+.blue-grey-300 {
+    background-color: #90a4ae;
+}
+
+.blue-grey-400 {
+    background-color: #78909c;
+}
+
+.blue-grey-500 {
+    background-color: #607d8b;
+}
+
+/* Shadow */
+
+.light-shadow {
+    box-shadow: 0 5px 10px 0 rgba(255,255,255,.1);
+}
+
+.dark-shadow {
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+}
+
+/* ---------------------------------------------------- *\
+        Animations
+\* ---------------------------------------------------- */
+
+/* Fade in */
+
+@-webkit-keyframes fadeIn {    
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {    
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+button,
+input,
+select,
+textarea,
+a {
+    -webkit-transition: background-color .3s ease;
+    -moz-transition: background-color .3s ease;
+    -ms-transition: background-color .3s ease;
+    -o-transition: background-color .3s ease;
+    transition: background-color .3s ease;
+}
+
+/* ---------------------------------------------------- *\
+        Notifications
+\* ---------------------------------------------------- */
+
+#notification {
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(215,75,75,.95);
+    cursor: pointer;
+    height: 80px;
+    line-height: 80px;
+}
