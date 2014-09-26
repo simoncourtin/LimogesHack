@@ -9,10 +9,10 @@ class ParticipantManager
 {
     private $db;
     public function __construct($db) {
-        $this->$db = $db;
+        $this->db = $db;
     }
     public function add($participant){
-        $req = $this->$db -> prepare('INSERT INTO participant (nom,prenom,mail,equipe,dateIncr) '
+        $req = $this->db -> prepare('INSERT INTO participant (nom,prenom,mail,equipe,dateIncr) '
                 . 'VALUES (:nom,:prenom,:mail,:equipe,:dateIncr)');
         $req -> bindValue(':nom',$participant->getNom(),PDO::PARAM_STR);
         $req -> bindValue(':prenom',$participant->getPrenom(),PDO::PARAM_STR);

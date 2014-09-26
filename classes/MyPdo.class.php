@@ -6,10 +6,10 @@
  * and open the template in the editor.
  */
 class MyPdo extends PDO{
-    
+    protected $dbo;
     public function __construct(){
         $bool = false;
-        if(ENV=='dev')
+        if(ENV == 'dev')
             $bool = true;
         try
         {

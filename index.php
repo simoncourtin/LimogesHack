@@ -80,5 +80,10 @@ and open the template in the editor.
                 <input type="submit" name="inscription" id="inscription" value="S'inscire">
             </form>
         </div>
+        <?php
+        include 'includes/config.inc.php';
+        include 'includes/autoload.inc.php';
+        include 'includes/ajouterEquipe.inc.php';
+        ?>
     </body>
 </html>

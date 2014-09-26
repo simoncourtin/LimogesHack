@@ -1,12 +1,8 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-function __autoload($classname)
+function __autoload($className)
 {
-    $repClass="classes/";
-    require $repClass.$classname.'.class.php';
+    $repClasses="classes/";
+    require $repClasses.$className.'.class.php';
 }
+?>
