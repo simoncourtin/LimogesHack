@@ -13,7 +13,7 @@ $(function() {
         num = num + 1;
 
         // Limiter le nombre de participants par équipe à 5
-        if (num > 5) return;
+        if (num > 5) return; 
 
         $('#userPanel').append($(
             '<div class="row"> \
@@ -28,6 +28,8 @@ $(function() {
                 </div> \
             </div>'
         ).fadeIn());
+
+        if (num == 5) $('#addUser').hide();
     });
 });
 
