@@ -1,0 +1,19 @@
+RewriteEngine on
+
+RewriteRule ^home$ index.php
+RewriteRule ^register$ register.php
+RewriteRule ^error$ error.php
+
+ErrorDocument 400 /error
+ErrorDocument 403 /error
+ErrorDocument 404 /error
+ErrorDocument 405 /error
+ErrorDocument 500 /error
+ErrorDocument 501 /error
+ErrorDocument 502 /error
+ErrorDocument 503 /error
+ErrorDocument 504 /error
+ErrorDocument 505 /error
+
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.gitignore
