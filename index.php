@@ -39,7 +39,7 @@
                         <h1>Qu'est-ce que c'est ?</h1>
                         <p>LimogesHack est un évènement inspiré de LeedsHack. Il s’agit d’un évènement rassemblant les personnes intéressées par diverses matières touchant à l’informatique, à savoir la programmation, le design, la robotique, etc. L’évènement se déroule sur 24 heures, et le but final est, en équipe, de rassembler ses connaissances et de créer un produit final.</p>
                         <p>L'objectif de LimogesHack est de créer des liens entre les participants et de s'amusant tout en montant un projet de groupe. Bien que l'évènement dure 24 heures, des activités ainsi que des conférences auront lieu pour s'aérer l'esprit et ainsi être plus productif.</p>
-                        <p>Au bout des 24 heures, chaque groupe devra présenter son produit final et lui verra attribué une note par les autres participants.</p>
+                        <p>Au bout des 24 heures, chaque groupe devra présenter son produit final qui sera noté par les autres participants.</p>
                     </section>
                 </div>
             </div>
@@ -48,7 +48,7 @@
                     <section id="section2">
                         <h1>Pour qui est-ce ?</h1>
                         <p>LimogesHack est ouvert à tout étudiant intéressé par les domaines de l’informatique. Des connaissances basiques sont nécessaires afin de mener à bien un projet concret.</p>
-                        <p>Les personnes n'ayant pas de concept seront orientés vers des idées de projet pensées par l'équipe de l'organisation.</p>
+                        <p>Les personnes n'ayant pas de concept seront orientées vers des idées de projet pensées par l'équipe de l'organisation.</p>
                     </section>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                     <section id="section3">
                         <h1>De quoi ai-je besoin ?</h1>
                         <p>Il est nécessaire d’amener son matériel (ordinateur portable, ordinateur fixe, etc.). Vous pouvez également amener de la nourriture et du matériel de couchage pour se créer un lieu confortable.</p>
-                        <p>Une cafétariat avec de la nourriture et de la boisson sera à votre disposition tout au long de l'évènement.</p>
+                        <p>Une cafétaria avec de la nourriture et de la boisson sera à votre disposition tout au long de l'évènement.</p>
                     </section>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <div class="container">
                     <section id="section4">
                         <h1>S'enregistrer</h1>
-                        <p class="text-center">Si vous êtes intéressés, vous savez ce qu'il vous reste à faire, c'est gratuit !</p>
+                        <p class="text-center">Si vous êtes intéressé, vous savez ce qu'il vous reste à faire, c'est gratuit !</p>
                         <form action="register" method="post" id="registerForm">
                             <h2>Votre projet</h2>
                             <label for="titre">Nom du projet</label>
