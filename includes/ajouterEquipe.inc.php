@@ -11,7 +11,7 @@ $db = new MyPdo();
 //création des donnees l'équipe
 $equipe = array(
     'nomEquipe' => htmlspecialchars($_POST['equipe']),
-    'nbParticipant' => null 
+    'nbParticipant' => 0 
 	);
 
 //création de l'objet équipe
@@ -20,8 +20,8 @@ $monEquipe = new Equipe($equipe);
 
 //création du projet
 $projet = array(
-    'nomProjet'=>'LimogesHack',
-    'description'=>'Test',
+    'nomProjet'=>htmlspecialchars($_POST['titre']),
+    'description'=>htmlspecialchars($_POST['projet']),
     'idEquipe' => null
 );
 $myManagerProjet = new ProjectManager($db);
@@ -44,7 +44,6 @@ while(isset($_POST['prenom'.$i]) or $i<5)
 			'projet'=>null
 			);
 		$participants[] = new Participant($participant);
-		
 	}
 	else
 	{
@@ -55,12 +54,13 @@ while(isset($_POST['prenom'.$i]) or $i<5)
 }
 //liaison du l'équipe du projet et des différents participants
 //ajout dans la bdd
-if(count($participants)>0 and $erreurParticipant== false)
+if(count($participants)>0 or $erreurParticipant == false)
 {
 	$lastid = $myManagerEquipe ->add($monEquipe);
 	$monProjet -> setIdEquipe($lastid);
 	$myManagerProjet ->add($monProjet);
-	foreach($participant as $value)
+	//echo $lastid;
+	foreach($participants as $value)
 	{
 		$value -> setEquipe($lastid);
 		$myManagerParticipant -> add($value);

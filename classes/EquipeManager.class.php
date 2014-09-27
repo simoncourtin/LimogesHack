@@ -13,7 +13,6 @@ class EquipeManager
     }
     
     public function add($equipe){
-        echo $equipe->getNomEquipe();
         $req = $this-> db-> prepare('INSERT INTO equipe (nomEquipe, nbParticipant, dateCrea)
                 VALUES (:nomEquipe, :nbParticipant, NOW())');
         $req -> bindValue(':nomEquipe',$equipe->getNomEquipe(),PDO::PARAM_STR);
