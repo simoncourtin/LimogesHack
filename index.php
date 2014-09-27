@@ -79,13 +79,13 @@
                             <h3>Chef de projet</h3>
                             <div class="row">
                                 <div class="col-3">
-                                    <input type="text" name="prenom" id="prenom" placeholder="Prénom">
+                                    <input type="text" name="prenom0" id="prenom0" placeholder="Prénom">
                                 </div>
                                 <div class="col-3">
-                                    <input type="text" name="nom" id="nom" placeholder="Nom">
+                                    <input type="text" name="nom0" id="nom0" placeholder="Nom">
                                 </div>
                                 <div class="col-3">
-                                    <input type="email" name="mail" id="mail" placeholder="Adresse e-mail">
+                                    <input type="email" name="mail0" id="mail0" placeholder="Adresse e-mail">
                                 </div>
                             </div>
                             <h3>Autres membres</h3>

@@ -7,7 +7,7 @@ class Participant
     private $equipe;
     private $projet;
 
-    function __contruct($valeur = array())
+    function __construct($valeur = array())
     {
         $this -> affecte($valeur);
     }
@@ -43,7 +43,7 @@ class Participant
         $this->mail = $mail;
     }
 
-    public function setEquipe($nom)
+    public function setEquipe($equipe)
     {
         $this->equipe = $equipe;
     }
