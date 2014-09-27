@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -40,6 +41,12 @@ Icon
 .AppleDesktop
 Network Trash Folder
 Temporary Items
+<<<<<<< HEAD
 .apdisk
 
 config.inc.php
+=======
+.apdisk
+
+config.inc.php
+>>>>>>> origin/master

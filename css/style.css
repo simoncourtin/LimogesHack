@@ -1,7 +1,7 @@
 /* 
  * Made with Dotlane
  * Copyright 2014
- * By François Chalifour
+ * By Francois Chalifour
  */
 
 /* ---------------------------------------------------- *\
@@ -789,6 +789,10 @@ table {
 
 .content {
     padding: 48px 0;
+}
+
+.content-no-pdb {
+    padding-bottom: 0;
 }
 
 .container {
