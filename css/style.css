@@ -791,6 +791,10 @@ table {
     padding: 48px 0;
 }
 
+.content-no-pdb {
+    padding-bottom: 0;
+}
+
 .container {
     margin: 0 auto;
     padding: 16px;

@@ -11,14 +11,14 @@
             <header class="nav-header nav-header-fixed dark-shadow">
                 <div class="container container-header nav-header-inner nav-header-inner-no-title">
                     <a href="home">
-                        <!-- <img src="img/logo.svg" alt="" class="logo"> -->
                         <h1 class="text-center">LimogesHack</h1>
                     </a>
                     <nav class="nav-header-inner-right">
                         <ul>
                             <li><a href="home">Accueil</a></li><!--
                             --><li><a href="about">A propos</a></li><!--
-                            --><li><a href="contact" class="current">Contact</a></li>
+                            --><li><a href="contact" class="current">Contact</a></li><!--
+                            --><li><a href="localisation">Localisation</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -59,6 +59,7 @@
         </div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/scrollspy.js"></script>
         <script src="js/contact.js"></script>
         <script src="js/autosize.js"></script>
         <script src="js/notif.js"></script>

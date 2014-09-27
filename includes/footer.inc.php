@@ -7,7 +7,9 @@
                                 LimogesHack
                             </p>
                             <p>
-                                Limoges, France
+                                2 Impasse Daguerre<br>
+                                87100 Limoges<br>
+                                France
                             </p>
                         </div>
                         <div class="col-3"></div>
@@ -17,7 +19,8 @@
                             </p>
                             <p>
                                 <a href="about">Qui sommes-nous ?</a><br>
-                                <a href="contact">Contact</a>
+                                <a href="contact">Contact</a><br>
+                                <a href="localisation">Localisation</a>
                             </p>
                         </div>
                     </div>

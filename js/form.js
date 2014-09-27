@@ -13,10 +13,10 @@ $(function() {
         num = num + 1;
 
         // Limiter le nombre de participants par équipe à 5
-        if (num > 5) return; 
+        if (num > 4) return;
 
         $('#userPanel').append($(
-            '<div class="row"> \
+            '<div class="row" id="user-' + num + '"> \
                 <div class="col-3"> \
                     <input type="text" name="prenom' + num + '" id="prenom' + num + '" placeholder="Prénom"> \
                 </div> \
@@ -29,7 +29,13 @@ $(function() {
             </div>'
         ).fadeIn());
 
-        if (num == 5) $('#addUser').hide();
+        if (num == 4) $('#addUser').hide();
+
+/*        $('#delete-' + num).on('click', function(e) {
+            e.preventDefault();
+            $('#user-' + num).slideUp();
+            num = num - 1;
+        });*/
     });
 });
 

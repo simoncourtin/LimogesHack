@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LimogesHack - Amusez-vous en codant !</title>
+        <title>LimogesHack - La journée du code</title>
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
@@ -16,10 +16,10 @@
                     </a>
                     <nav class="nav-header-inner-right">
                         <ul>
-                            <li><a href="#section1" class="current">A propos</a></li><!--
-                            --><li><a href="#section2">Pour qui</a></li><!--
-                            --><li><a href="#section3">Matériel</a></li><!--
-                            --><li><a href="#section4">Inscription</a></li>
+                            <li><a href="home" class="current">Accueil</a></li><!--
+                            --><li><a href="about">A propos</a></li><!--
+                            --><li><a href="contact">Contact</a></li><!--
+                            --><li><a href="localisation">Localisation</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="container">
                     <section>
                         <p class="lead text-center">
-                            LimogesHack, amusez-vous en codant !
+                            LimogesHack, la journée du code
                         </p>
                     </section>
                 </div>
@@ -90,7 +90,7 @@
                             </div>
                             <h3>Autres membres</h3>
                             <div id="userPanel">
-                                <div class="row">
+                                <div class="row" id="user-1">
                                     <div class="col-3">
                                         <input type="text" name="prenom1" id="prenom1" placeholder="Prénom">
                                     </div>
