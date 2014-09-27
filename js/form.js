@@ -60,7 +60,7 @@ $(function() {
             });
             $('#titre').focus();
         } else if (!descProjet) {
-            $('#notification').text('Vous présenter votre projet en quelques lignes.').miniNotification({
+            $('#notification').text('Vous devez présenter votre projet en quelques lignes.').miniNotification({
                 time: 3000,
                 showSpeed: 400,
             });
