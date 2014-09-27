@@ -1,8 +1,8 @@
 <?php
-
+//test si les champs concernant le projet et le nom de l'équipe ont bienété remplis
 if(!isset($_POST['titre']) and !isset($_POST['projet'])and !isset($_POST['equipe']))
 {
-	header('location:index');
+	header('location:index.php');
 }
 
 //connexion base de données
@@ -32,7 +32,7 @@ $participants = array();
 $i=0;
 $erreurParticipant= false;
 $myManagerParticipant = new ParticipantManager($db);
-while($_POST['prenom'.$i] and $i<5)
+while(isset($_POST['prenom'.$i]) or $i<5)
 {
 	if(isset($_POST['nom'.$i]) and isset($_POST['nom'.$i]))
 	{
@@ -44,11 +44,14 @@ while($_POST['prenom'.$i] and $i<5)
 			'projet'=>null
 			);
 		$participants[] = new Participant($participant);
+		
 	}
 	else
 	{
 		$erreurParticipant= true;
+		break;
 	}
+	$i++;
 }
 //liaison du l'équipe du projet et des différents participants
 //ajout dans la bdd
@@ -63,16 +66,4 @@ if(count($participants)>0 and $erreurParticipant== false)
 		$myManagerParticipant -> add($value);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

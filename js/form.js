@@ -54,9 +54,9 @@ $(function() {
         var descProjet = $.trim($('#projet').val());
         var nomEquipe = $.trim($('#equipe').val());
 
-        var prenomChef = $.trim($('#prenom').val());
-        var nomChef = $.trim($('#nom').val());
-        var mailChef = $.trim($('#mail').val());
+        var prenomChef = $.trim($('#prenom0').val());
+        var nomChef = $.trim($('#nom0').val());
+        var mailChef = $.trim($('#mail0').val());
 
         // Vérification du formulaire
         if (!nomProjet) {
