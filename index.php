@@ -7,19 +7,13 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <!-- Wrap all your content -->
         <div id="dotlane-wrapper">
-            <!-- Fixed header -->
             <header class="nav-header nav-header-fixed dark-shadow">
-                <!-- Content of the header -->
                 <div class="container container-header nav-header-inner nav-header-inner-no-title">
                     <a href="home">
-                        <!-- Your logo -->
                         <!-- <img src="img/logo.svg" alt="" class="logo"> -->
-                        <!-- Your name -->
                         <h1>LimogesHack</h1>
                     </a>
-                    <!-- Navigation -->
                     <nav class="nav-header-inner-right">
                         <ul>
                             <li><a href="#section1" class="current">A propos</a></li><!--
@@ -30,13 +24,9 @@
                     </nav>
                 </div>
             </header>
-            <!-- Wrap your containers -->
             <div class="content blue-grey-300 text-white">
-                <!-- Main section -->
                 <div class="container">
-                    <!-- Content of your container -->
                     <section>
-                        <!-- Short description -->
                         <p class="lead text-center">
                             LimogesHack, amusez-vous en codant !
                         </p>
@@ -124,33 +114,7 @@
                     </section>
                 </div>
             </div>
-            <!-- Footer of the page -->
-            <footer class="nav-footer">
-                <a href="#" class="control-button-top" title="Back to top">&nbsp;</a>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-3">
-                            <p class="lead">
-                                LimogesHack
-                            </p>
-                            <p>
-                                Limoges, France
-                            </p>
-                        </div>
-                        <div class="col-3"></div>
-                        <div class="col-3">
-                            <p class="lead">
-                                Liens
-                            </p>
-                            <p>
-                                <a href="#">Twitter</a><br>
-                                <a href="#">Facebook</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-
+            <?php require_once("includes/footer.inc.php") ?>
             <div id="notification"></div>
         </div>
 

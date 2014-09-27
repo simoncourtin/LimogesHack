@@ -2,6 +2,8 @@ RewriteEngine on
 
 RewriteRule ^home$ index.php
 RewriteRule ^register$ register.php
+RewriteRule ^about$ about.php
+RewriteRule ^contact$ contact.php
 RewriteRule ^error$ error.php
 
 ErrorDocument 400 /error
