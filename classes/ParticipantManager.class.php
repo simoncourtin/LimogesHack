@@ -40,4 +40,17 @@ class ParticipantManager
 		$participants =  $req->fetchAll();
 		return $participants;
 	}
+	public function verifParticipant($participant)
+	{
+		$req = $this-> db-> prepare('SELECT * 
+									FROM participant   
+									WHERE nom=:nom AND 
+									prenom = :prenom AND mail =:mail');
+		$req -> bindValue(':nom',$participant->getNom(),PDO::PARAM_STR);
+        $req -> bindValue(':prenom',$participant->getPrenom(),PDO::PARAM_STR);
+        $req -> bindValue(':mail',$participant->getMail(),PDO::PARAM_STR);
+        $req -> execute();
+		$result =  $req->fetch();
+		return ($result!=null)? true: false;
+	}
 }?>

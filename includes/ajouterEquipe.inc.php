@@ -1,5 +1,6 @@
 <?php
-include 'mail.inc.php';
+session_start();
+$_SESSION['b']=0;
 //test si les champs concernant le projet et le nom de l'équipe ont bienété remplis
 if(!isset($_POST['titre']) and !isset($_POST['projet'])and !isset($_POST['equipe']))
 {
@@ -30,18 +31,34 @@ $participants = array();
 $i=0;
 $erreurParticipant= false;
 $myManagerParticipant = new ParticipantManager($db);
-while(isset($_POST['prenom'.$i]) or $i<5)
+while(isset($_POST['prenom'.$i]) and $i<5)
 {
-	if(isset($_POST['nom'.$i]) and isset($_POST['nom'.$i]))
+	echo $_POST['prenom'.$i];
+	if(!empty($_POST['nom'.$i]) and !empty($_POST['nom'.$i])and !empty($_POST['mail'.$i]))
 	{
-		$participant = array(
-			'nom' => htmlspecialchars($_POST['nom'.$i]),
-			'prenom' => htmlspecialchars($_POST['prenom'.$i]),
-			'mail'=>htmlspecialchars($_POST['mail'.$i]),
-			'equipe'=> null,
-			'chefEquipe'=>($i==0)? 1:0
-			);
-		$participants[$i] = new Participant($participant);
+		if(strlen($_POST['nom'.$i]) > 2 and strlen($_POST['prenom'.$i]) > 2)
+		{
+			$participant = array(
+				'nom' => htmlspecialchars($_POST['nom'.$i]),
+				'prenom' => htmlspecialchars($_POST['prenom'.$i]),
+				'mail'=>htmlspecialchars($_POST['mail'.$i]),
+				'equipe'=> null,
+				'chefEquipe'=>($i==0)? 1:0
+				);
+			$participants[$i] = new Participant($participant);
+			echo($myManagerParticipant-> verifParticipant($participants[$i]));
+			if($myManagerParticipant-> verifParticipant($participants[$i])==true)
+			{
+				$_SESSION['erreurInscription']=1;
+				$erreurParticipant= true;
+				break;
+			}
+		}
+		else
+		{
+			$erreurParticipant= true;
+			break;
+		}
 	}
 	else
 	{
@@ -61,7 +78,7 @@ $mail = array (
 $myMail = new Mail($mail);
 //liaison du l'équipe du projet et des différents participants
 //ajout dans la bdd
-if(count($participants)>0 or $erreurParticipant == false)
+if(count($participants)>0 and $erreurParticipant == false)
 {
 	$lastid = $myManagerEquipe ->add($monEquipe);
 	$monProjet -> setIdEquipe($lastid);
