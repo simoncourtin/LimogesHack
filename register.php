@@ -16,7 +16,6 @@
             <header class="nav-header nav-header-fixed dark-shadow">
                 <div class="container container-header nav-header-inner">
                     <a href="home">
-                        <!-- <img src="img/logo.svg" alt="" class="logo"> -->
                         <h1 class="text-center">LimogesHack</h1>
                     </a>
                 </div>
@@ -24,12 +23,28 @@
             <div class="content grey-200 h-500">
                 <div class="container">
                     <section id="section1">
+                        <?php 
+                        if (!empty($_SESSION['erreurInscription'])) {
+                        ?>
+                        <h1>Une erreur est survenue</h1>
+                        <p>Un membre est déjà inscrit dans un projet.</p>
+                        <div class="text-center">
+                            <a onclick="history.back()" class="button clickable">Recommencer</a>
+                        </div>
+                        <?php
+                            $_SESSION['erreurInscription'] = array();
+                            session_destroy();
+                        } else {
+                        ?>
                         <h1>Merci</h1>
                         <p>Votre inscription a bien été prise en compte.</p>
                         <p>A bientôt !</p>
                         <div class="text-center">
                             <a href="home" class="button">Revenir à l'accueil</a>
                         </div>
+                        <?php 
+                        }
+                        ?>
                     </section>
                 </div>
             </div>
