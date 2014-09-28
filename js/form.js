@@ -4,7 +4,7 @@
 
 $(function() {
     var addUser = $('#addUser');
-    var num = 1;
+    var num = 0;
 
     $(addUser).on('click', function(e) {
         e.preventDefault();
