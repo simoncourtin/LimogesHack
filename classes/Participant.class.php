@@ -5,7 +5,7 @@ class Participant
     private $prenom;
     private $mail;
     private $equipe;
-    private $projet;
+    private $chefEquipe;
 
     function __construct($valeur = array())
     {
@@ -22,7 +22,7 @@ class Participant
                 case 'prenom' : $this->setPrenom($donnee); break;
                 case 'mail' : $this->setMail($donnee); break;
                 case 'equipe' : $this->setEquipe($donnee); break;
-                case 'project' : $this->setProjet($donnee); break;
+                case 'chefEquipe' : $this->setChef($donnee); break;
                 default : break;
             }
         }
@@ -47,7 +47,12 @@ class Participant
     {
         $this->equipe = $equipe;
     }
-
+	
+	public function setChef($bool)
+    {
+        $this->chefEquipe = $bool;
+    }
+	
     public function getNom() {
         return $this->nom;
     }
@@ -62,6 +67,9 @@ class Participant
 
     public function getEquipe() {
         return $this->equipe;
+    }
+	public function getChef() {
+        return $this->chefEquipe;
     }
 
 }
