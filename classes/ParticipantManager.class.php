@@ -12,12 +12,32 @@ class ParticipantManager
         $this->db = $db;
     }
     public function add($participant){
-        $req = $this->db -> prepare('INSERT INTO participant (nom,prenom,mail,equipe,dateIncr) '
-                . 'VALUES (:nom,:prenom,:mail,:equipe,NOW())');
+        $req = $this->db -> prepare('INSERT INTO participant (nom,prenom,mail,equipe,chefEquipe,dateIncr) '
+                . 'VALUES (:nom,:prenom,:mail,:equipe,:chefEquipe,NOW())');
         $req -> bindValue(':nom',$participant->getNom(),PDO::PARAM_STR);
         $req -> bindValue(':prenom',$participant->getPrenom(),PDO::PARAM_STR);
-        $req -> bindValue(':mail',$participant->getPrenom(),PDO::PARAM_STR);
-        $req -> bindValue(':equipe',$participant->getPrenom(),PDO::PARAM_INT);
+        $req -> bindValue(':mail',$participant->getMail(),PDO::PARAM_STR);
+        $req -> bindValue(':equipe',$participant->getEquipe(),PDO::PARAM_INT);
+		$req -> bindValue(':chefEquipe',$participant->getChef(),PDO::PARAM_INT);
         $req -> execute(); 
     }
+	public function getParticipantId($id)
+	{
+		$req = $this-> db-> prepare('SELECT * 
+									FROM participant   
+									WHERE idParticipant = :idParticipant');
+		$req -> bindValue(':idParticipant',$id,PDO::PARAM_INT);
+        $req -> execute();
+		$participant =  $req->fetch();
+		return $participant;
+		
+	}
+	public function getParticiapants()
+	{
+		$req = $this-> db-> prepare('SELECT * 
+									FROM participant');
+        $req -> execute();
+		$participants =  $req->fetchAll();
+		return $participants;
+	}
 }?>

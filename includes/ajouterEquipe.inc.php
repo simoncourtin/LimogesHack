@@ -1,4 +1,5 @@
 <?php
+include 'mail.inc.php';
 //test si les champs concernant le projet et le nom de l'équipe ont bienété remplis
 if(!isset($_POST['titre']) and !isset($_POST['projet'])and !isset($_POST['equipe']))
 {
@@ -9,10 +10,7 @@ if(!isset($_POST['titre']) and !isset($_POST['projet'])and !isset($_POST['equipe
 $db = new MyPdo();
 
 //création des donnees l'équipe
-$equipe = array(
-    'nomEquipe' => htmlspecialchars($_POST['equipe']),
-    'nbParticipant' => 0 
-	);
+$equipe =  htmlspecialchars($_POST['equipe']);
 
 //création de l'objet équipe
 $myManagerEquipe = new EquipeManager($db);
@@ -41,9 +39,9 @@ while(isset($_POST['prenom'.$i]) or $i<5)
 			'prenom' => htmlspecialchars($_POST['prenom'.$i]),
 			'mail'=>htmlspecialchars($_POST['mail'.$i]),
 			'equipe'=> null,
-			'projet'=>null
+			'chefEquipe'=>($i==0)? 1:0
 			);
-		$participants[] = new Participant($participant);
+		$participants[$i] = new Participant($participant);
 	}
 	else
 	{
@@ -52,6 +50,15 @@ while(isset($_POST['prenom'.$i]) or $i<5)
 	}
 	$i++;
 }
+//création du mail de confirmation d'inscription
+$myMailManager = new MailManager($db);
+$mail = array (
+	'header'=>'From:Team Lim\'Hack',
+	'sujet'=>'Validation de l\'inscription',
+	'mail'=>null,
+	'message'=>'Vous etes bien inscrit à la lim\'Hack'
+	);
+$myMail = new Mail($mail);
 //liaison du l'équipe du projet et des différents participants
 //ajout dans la bdd
 if(count($participants)>0 or $erreurParticipant == false)
@@ -59,11 +66,12 @@ if(count($participants)>0 or $erreurParticipant == false)
 	$lastid = $myManagerEquipe ->add($monEquipe);
 	$monProjet -> setIdEquipe($lastid);
 	$myManagerProjet ->add($monProjet);
-	//echo $lastid;
 	foreach($participants as $value)
 	{
 		$value -> setEquipe($lastid);
 		$myManagerParticipant -> add($value);
+		$myMail->setMail($value -> getMail());
+		$myMailManager -> add($myMail);
 	}
 }
 ?>
