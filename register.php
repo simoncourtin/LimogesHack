@@ -16,11 +16,11 @@
             <header class="nav-header nav-header-fixed dark-shadow">
                 <div class="container container-header nav-header-inner">
                     <a href="home">
-                        <h1 class="text-center">LimogesHack</h1>
+                        <div class="title text-center">LimogesHack</div>
                     </a>
                 </div>
             </header>
-            <div class="content grey-200 h-500">
+            <div class="content bg-grey-200 h-500">
                 <div class="container">
                     <section id="section1">
                         <?php 

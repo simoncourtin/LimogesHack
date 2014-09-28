@@ -11,8 +11,7 @@
             <header class="nav-header nav-header-fixed dark-shadow">
                 <div class="container container-header nav-header-inner nav-header-inner-no-title">
                     <a href="home">
-                        <!-- <img src="img/logo.svg" alt="" class="logo"> -->
-                        <h1>LimogesHack</h1>
+                        <div class="title">LimogesHack</div>
                     </a>
                     <nav class="nav-header-inner-right">
                         <ul>
@@ -24,10 +23,10 @@
                     </nav>
                 </div>
             </header>
-            <div class="content blue-grey-300 text-white">
+            <div class="content content-feature text-white bg-fixed">
                 <div class="container">
                     <section>
-                        <p class="lead text-center">
+                        <p class="lead text-center h-200">
                             LimogesHack, la journée du code
                         </p>
                     </section>
@@ -104,7 +103,7 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="button" class="button gray" name="addUser" id="addUser">+ Ajouter un membre</button>
+                                <button type="button" class="button button-grey" name="addUser" id="addUser">+ Ajouter un membre</button>
                             </div>
 
                             <div class="text-center">

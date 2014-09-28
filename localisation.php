@@ -19,7 +19,7 @@
             <header class="nav-header nav-header-fixed dark-shadow">
                 <div class="container container-header nav-header-inner nav-header-inner-no-title">
                     <a href="home">
-                        <h1 class="text-center">LimogesHack</h1>
+                        <div class="title text-center">LimogesHack</div>
                     </a>
                     <nav class="nav-header-inner-right">
                         <ul>
@@ -31,7 +31,7 @@
                     </nav>
                 </div>
             </header>
-            <div class="content content-no-pdb grey-200 h-500">
+            <div class="content content-no-pdb bg-grey-200 h-500">
                 <div class="container">
                     <section id="section1">
                         <h1>Localisation</h1>
@@ -42,7 +42,7 @@
                         </p>
                     </section>
                 </div>
-                <div id="map-canvas">Chargement du plan</div>
+                <div id="map-canvas"></div>
             </div>
             <?php require_once("includes/footer.inc.php") ?>
         </div>

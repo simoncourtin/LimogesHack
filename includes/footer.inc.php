@@ -4,7 +4,7 @@
                     <div class="row">
                         <div class="col-3">
                             <p class="lead">
-                                LimogesHack
+                                &copy; 2014 - LimogesHack
                             </p>
                             <p>
                                 2 Impasse Daguerre<br>
@@ -24,5 +24,6 @@
                             </p>
                         </div>
                     </div>
+                    <p class="text-center">Made with <a href="http://dotlane.francoischalifour.com" target="blank">Dotlane</a></p>
                 </div>
             </footer>

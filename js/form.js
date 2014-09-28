@@ -30,14 +30,22 @@ $(function() {
         ).fadeIn());
 
         if (num == 4) $('#addUser').hide();
-
-/*        $('#delete-' + num).on('click', function(e) {
-            e.preventDefault();
-            $('#user-' + num).slideUp();
-            num = num - 1;
-        });*/
     });
 });
+
+/*
+ * Suppression de participants
+ */
+
+/*$(function() {
+    for (var i; i < num; i++) {
+        $('#delete-' + i).on('click', function(event) {
+            event.preventDefault();
+            $('#user-' + i).slideUp();
+            num = num - 1;
+        });
+    }
+});*/
 
 /*
  * Envoi du formulaire

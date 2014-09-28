@@ -1,5 +1,5 @@
 /* 
- * Made with Dotlane
+ * Dotlane
  * Copyright 2014
  * By Francois Chalifour
  */
@@ -124,26 +124,39 @@ body {
     font-size: 16px;
     line-height: 1.428571429;
     color: #333;
-    background-color: #37474f;
+    background-color: #fff;
 }
 
 /* Titles */
 
+h1,
+h2,
+h3,
+h4 {
+    text-align: left;
+}
+
 h1 {
     margin: 0.6em 0;
-    font-size: 2em;
+    font-size: 36px;
+    letter-spacing: -1px;
 }
 
 h2 {
     margin: 0.3em 0;
-    font-size: 1.6em;
+    font-size: 32px;
+    letter-spacing: -.5px;
     text-align: left;
 }
 
 h3 {
     margin: 0.2em 0;
-    font-size: 1.2em;
-    text-align: left;
+    font-size: 24px;
+}
+
+h4 {
+    margin: 0.2em 0;
+    font-size: 18px;
 }
 
 /* Paragraphs */
@@ -164,27 +177,24 @@ p {
     line-height: 1.4;
 }
 
-.lead {
-    font-size: 1.4em;
-}
-
 .huge {
-    font-size: 3em;
+    font-size: 38px;
 }
 
-b,
+.lead {
+    font-size: 24px;
+}
+
 strong,
 .bold {
     font-weight: bold;
 }
 
-i,
 em,
 .italic {
     font-style: italic;
 }
 
-u,
 .underline {
     text-decoration: underline;
 }
@@ -210,14 +220,35 @@ img {
 }
 
 ul {
-    margin-left: 18px;
-    list-style: circle;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 1em;
+    padding-left: 1em;
 }
 
-.unlisted {
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+    margin-bottom: 0;
+}
+
+.list-unstyled {
     margin-left: 0;
     padding-left: 0;
     list-style: none;
+}
+
+.list-inline {
+    margin-left: -5px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline > li {
+    display: inline-block;
+    padding-right: 6px;
+    padding-left: 6px;
 }
 
 pre {
@@ -246,12 +277,12 @@ a:active,
 a:visited {
     text-decoration: none;
     color: #78909c;
-    background: transparent;
 }
 
 a.button,
 .button {
     display: inline-block;
+    margin: 2px;
     padding: 0 10px;
     min-height: 50px;
     min-width: 180px;
@@ -262,7 +293,11 @@ a.button,
     line-height: 50px;
     color: #fff;
     background-color: #78909c;
-    margin: 2px;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -ms-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
 }
 
 .button:active,
@@ -275,68 +310,62 @@ button:active {
     background-color: #546e7a;
 }
 
-a.button.blue,
-.button.blue {
+a.button-blue,
+.button-blue {
     background-color: #03a9f4;
 }
 
-.button.blue:hover {
+.button-blue:hover {
     background-color: #039be5;
 }
 
-a.button.green,
-.button.green {
+a.button-green,
+.button-green {
     background-color: #689f38;
 }
 
-.button.green:hover {
+.button-green:hover {
     background-color: #558b2f;
 }
 
-a.button.red,
-.button.red {
+a.button-red,
+.button-red {
     background-color: #f50057;
 }
 
-.button.red:hover {
+.button-red:hover {
     background-color: #d74b4b;
 }
 
-a.button.gray,
-.button.gray {
-    border: 2px solid #ccc;
-    color: #ccc;
+a.button-white,
+.button-white {
     background-color: #fff;
+    color: #333;
 }
 
-.button.gray:hover {
+.button-white:hover {
+    background-color: #eee;
+    color: #333;
+}
+
+a.button.grey,
+.button.grey {
     background-color: #ccc;
-    color: #fff;
+}
+
+.button.grey:hover {
+    background-color: #bbb;
 }
 
 /* ---------------------------------------------------- *\
         Layout
 \* ---------------------------------------------------- */
 
-/* Change the property of your components when the background of the container is dark */
-
-/* To crop the image at the bottom */
-
-.crop-img {
-    margin-bottom: -300px;
-}
-
-@media all and (max-width:800px) {
-    .crop-img {
-        display: none;
-    }
-}
-
 /* Circle (with a picture of you for example) */
 
 .img-circle {
-    height: 300px;
     width: 300px;
+    height: 300px;
     border-radius: 50%;
     overflow: hidden;
     text-align: center;
@@ -344,132 +373,77 @@ a.button.gray,
     background-color: rgba(255,255,255,0.3);
 }
 
-/* Huge grid (for your projects for example) */
+/* Grid (for your projects for example) */
 
-.huge-grid {
+.grid-panel {
+    margin: 12px 0;
+    color: #fff;
+    background: #90a4ae;
+    -webkit-transition-duration: .2s;
+    -moz-transition-duration: .2s;
+    -ms-transition-duration: .2s;
+    -o-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+.grid-panel:hover {
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+}
+
+@media(min-width:1024px) {
+    .grid-panel {
+        float: left;
+        width: 30%;
+        margin: 12px;
+    }
+}
+
+.grid-panel .grid-panel-illustration {
     overflow: hidden;
-    background-color: #fff;
 }
 
-.huge-grid article .thumb {
-    float: left;
-    clear: both;
-    width: 50%;
-    margin-bottom: -6px;
-    max-height: 450px;
-    overflow: hidden;
+.grid-panel .grid-panel-illustration img {
+    transition: opacity .3s;
 }
 
-.huge-grid article:nth-child(even) .thumb {
-    float: right;
+.grid-panel:hover .grid-panel-illustration img {
+    opacity: .7;
 }
 
-.huge-grid article .thumb img {
-    max-width: 100%;
-}
-
-.huge-grid aside .description {
-    float: right;
-    width: 50%;
-    padding: 10px;
-    max-height: 450px;
-    background-color: #fff;
-}
-
-.huge-grid article:nth-child(even) aside .description {
-    float: left;
-}
-
-.huge-grid article aside .description .title,
-.small-grid article aside .description .title {
+.grid-panel .grid-panel-heading {
+    padding: 16px;
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.2em;
-    color: #333;
 }
 
-.huge-grid article aside .description .date {
-    text-align: center;
-    font-size: 1em;
-    color: #999;
+.grid-panel a {
+    color: #fff;
 }
 
-.huge-grid article aside .description p {
-    color: #333;
+.grid-panel .grid-panel-body {
+    padding: 24px;
+    padding-top: 0;
 }
 
-@media all and (max-width:976px) {
-    .huge-grid article .thumb {
-        float: none;
-        width: 100%;
-        text-align: center;
-    }
-
-    .huge-grid aside .description {
-        float: none;
-        width: 100%;
-        height: auto;
-    }
-
-    .huge-grid aside .description p {
-        display: none;
-    }
-}
-
-/* Small grid */
-
-.small-grid {
-    clear: both;
-    overflow: hidden;
-}
-
-.small-grid article {
-    float: left;
-    width: 150px;
-    height: 200px;
-    margin-top: 5px;
-    margin-right: 5px;
-    border-radius: 3px;
-    background-color: #fff;
-}
-
-.small-grid article .thumb {
+.grid-panel img {
     width: 100%;
-    height: 150px;
-    margin-bottom: -6px;
+}
+
+/* Columns (to split your content into columns) */
+
+.row,
+.grid {
     overflow: hidden;
-    text-align: center;
-}
-
-.small-grid article .thumb img {
-    max-height: 100%;
-    max-width: 100%;
-}
-
-.small-grid aside .description {
-    width: 100%;
-    padding: 10px;
-    background-color: #fff;
-}
-
-/* Columns
-  * To split your content into columns
-  */
-
-.row {
-    overflow: hidden;
-}
-
-input[type=text] {
-    width: 95%;
-    margin-right: 2px;
+    margin-right: -12px;
+    margin-left: -12px;
 }
 
 [class*="col-"] {
     float: left;
     position: relative;
-    padding-right: 1.5em;
     min-height: 1px;
+    padding-right: 12px;
+    padding-left: 12px;
 }
 
 .col-2 {
@@ -488,25 +462,12 @@ input[type=text] {
     width: 20%;
 }
 
-[class*="col-"] {
-    padding-right: 0;
-}
-
-/* Titles for columns */
-
-/* .col-2 h2,
-.col-3 h2 {
-    border-bottom: 1px solid;
-    text-align: center;
-} */
-
 /* Columns for small screens */
 
 @media all and (max-width:640px) {
     .col-2 {
         clear: both;
         width: 100%;
-        padding-right: 0;
     }
 }
 
@@ -515,7 +476,6 @@ input[type=text] {
     .col-4 {
         clear: both;
         width: 100%;
-        padding-right: 0;
     }
 }
 
@@ -679,7 +639,7 @@ table {
     min-height: 100%;
 }
 
-/* Fixed header at the top */
+/* Navbar header at the top */
 
 .nav-header {
     min-height: 80px;
@@ -688,12 +648,14 @@ table {
     background-color: #78909c;
 }
 
+/* Add this class if you want to fix it at the top */
+
 .nav-header-fixed {
+    z-index: 100;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    z-index: 100;
 }
 
 .nav-header-fixed + .content {
@@ -709,28 +671,31 @@ table {
 /* Logo of the header */
 
 .nav-header-inner .logo {
+    display: none;
     float: left;
     width: 40px;
     height: 40px;
+    margin-top: 16px;
 }
 
-/* Title the page */
+@media(min-width:768px) {
+    .nav-header-inner .logo {
+        display: block;
+    }
+}
 
-.nav-header-inner h1 {
-    display: block;
-    float: none;
+/* Title of the page */
+
+.nav-header-inner .title {
+    display: none;
+    float: left;
     position: relative;
     margin: 0;
     font-size: 28px;
 }
 
-.nav-header-inner-no-title h1 {
-    display: none;
-    float: left;
-}
-
 @media(min-width:768px) {
-    .nav-header-inner h1 {
+    .nav-header-inner .title {
         display: block;
     }
 }
@@ -755,8 +720,8 @@ table {
 }
 
 .nav-header-inner-right ul {
-    height: 50px; /*  POURQUOI ? */
     margin: 0;
+    padding: 0;
     text-align: center;
 }
 
@@ -782,17 +747,28 @@ table {
 }
 
 .nav-header-inner-right ul li a:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255,255,255,.1);
 }
 
 /* Wrap your containers */
 
 .content {
     padding: 48px 0;
+    background-color: #fff;
+}
+
+.content:nth-child(odd) {
+    background-color: #f7f7f7;
 }
 
 .content-no-pdb {
     padding-bottom: 0;
+}
+
+.content-feature {
+    background-color: #90a4ae;
+    background-image: url(../img/feature.jpg);
+    background-size: cover;
 }
 
 .container {
@@ -812,39 +788,25 @@ table {
 
 @media(min-width:768px) {
     .container {
-        width: 750px;
+        width: 716px;
     }
 }
 
 @media(min-width:992px) {
     .container {
-        width: 970px;
+        width: 938px;
     }
 }
 
 @media(min-width:1200px) {
     .container {
-        width: 1170px;
+        width: 1148px;
     }
-}
-
-.h-500 {
-    min-height: 480px;
-}
-
-/* Sections you want to talk about */
-
-.content {
-    background-color: #fff;
-}
-
-.content:nth-child(odd) {
-    background-color: #f7f7f7;
 }
 
 /* Main container */
 
-.fixed {
+.bg-fixed {
     background-attachment: fixed;
 }
 
@@ -858,7 +820,17 @@ table {
 }
 
 .nav-footer a {
+    color: #b0bec5;
+    transition-duration: .15s;
+}
+
+.nav-footer a:active,
+.nav-footer a:hover {
     color: #fff;
+}
+
+.nav-footer li {
+    margin-bottom: 8px;
 }
 
 a.control-button-top {
@@ -889,7 +861,7 @@ a.control-button-top:hover {
 }
 
 /* ---------------------------------------------------- *\
-        Colors
+        Colors and Shadows
 \* ---------------------------------------------------- */
 
 /* Font color */
@@ -898,26 +870,174 @@ a.control-button-top:hover {
     color: #fff;
 }
 
+.text-black {
+    color: #000;
+}
+
 /* Background color */
 
-.grey-200 {
+.bg-grey-200 {
     background-color: #f7f7f7;
 }
 
-.blue-grey-200 {
+.bg-blue-grey-50 {
+    background-color: #eceff1;
+}
+
+.bg-blue-grey-100 {
+    background-color: #cfd8dc;
+}
+
+.bg-blue-grey-200 {
     background-color: #b0bec5;
 }
 
-.blue-grey-300 {
+.bg-blue-grey-300 {
     background-color: #90a4ae;
 }
 
-.blue-grey-400 {
+.bg-blue-grey-400 {
     background-color: #78909c;
 }
 
-.blue-grey-500 {
+.bg-blue-grey-500 {
     background-color: #607d8b;
+}
+
+.bg-blue-grey-600 {
+    background-color: #546e7a;
+}
+
+.bg-blue-grey-700 {
+    background-color: #455a64;
+}
+
+.bg-blue-grey-800 {
+    background-color: #37474f;
+}
+
+.bg-blue-grey-900 {
+    background-color: #263238;
+}
+
+.bg-light-blue-50 {
+    background-color: #e1f5fe;
+}
+
+.bg-light-blue-100 {
+    background-color: #b3e5fc;
+}
+
+.bg-light-blue-200 {
+    background-color: #81d4fa;
+}
+
+.bg-light-blue-300 {
+    background-color: #4fc3f7;
+}
+
+.bg-light-blue-400 {
+    background-color: #29b6f6;
+}
+
+.bg-light-blue-500 {
+    background-color: #03a9f4;
+}
+
+.bg-light-blue-600 {
+    background-color: #039be5;
+}
+
+.bg-light-blue-700 {
+    background-color: #0288d1;
+}
+
+.bg-light-blue-800 {
+    background-color: #0277bd;
+}
+
+.bg-light-blue-900 {
+    background-color: #01579b;
+}
+
+.bg-cyan-50 {
+    background-color: #e0f7fa;
+}
+
+.bg-cyan-100 {
+    background-color: #b2ebf2;
+}
+
+.bg-cyan-200 {
+    background-color: #80deea;
+}
+
+.bg-cyan-300 {
+    background-color: #4dd0e1;
+}
+
+.bg-cyan-400 {
+    background-color: #26c6da;
+}
+
+.bg-cyan-500 {
+    background-color: #00bcd4;
+}
+
+.bg-cyan-600 {
+    background-color: #00acc1;
+}
+
+.bg-cyan-700 {
+    background-color: #0097a7;
+}
+
+.bg-cyan-800 {
+    background-color: #00838f;
+}
+
+.bg-cyan-900 {
+    background-color: #006064;
+}
+
+.bg-teal-50 {
+    background-color: #e0f2f1;
+}
+
+.bg-teal-100 {
+    background-color: #b2dfdb;
+}
+
+.bg-teal-200 {
+    background-color: #80cbc4;
+}
+
+.bg-teal-300 {
+    background-color: #4db6ac;
+}
+
+.bg-teal-400 {
+    background-color: #26a69a;
+}
+
+.bg-teal-500 {
+    background-color: #009688;
+}
+
+.bg-teal-600 {
+    background-color: #00897b;
+}
+
+.bg-teal-700 {
+    background-color: #00796b;
+}
+
+.bg-teal-800 {
+    background-color: #00695c;
+}
+
+.bg-teal-900 {
+    background-color: #004d40;
 }
 
 /* Shadow */
@@ -935,6 +1055,15 @@ a.control-button-top:hover {
 \* ---------------------------------------------------- */
 
 /* Fade in */
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
 
 @-webkit-keyframes fadeIn {    
     from {
@@ -959,8 +1088,7 @@ a.control-button-top:hover {
 button,
 input,
 select,
-textarea,
-a {
+textareaa {
     -webkit-transition: background-color .3s ease;
     -moz-transition: background-color .3s ease;
     -ms-transition: background-color .3s ease;
@@ -991,4 +1119,25 @@ a {
 
 .clickable {
     cursor: pointer;
+}
+
+.button-grey {
+    background-color: transparent;
+    border: 2px solid #ccc;
+    color: #ccc;
+}
+
+.button-grey:hover {
+    background-color: #ccc;
+    border: 2px solid #ccc;
+    color: #fff;
+}
+
+.h-500 {
+    min-height: 500px;
+}
+
+.h-200 {
+    min-height: 200px;
+    line-height: 200px;
 }
