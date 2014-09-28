@@ -1,10 +1,10 @@
 /*
  * Ajout de membres
  */
+num = 1;
 
 $(function() {
     var addUser = $('#addUser');
-    var num = 0;
 
     $(addUser).on('click', function(e) {
         e.preventDefault();
@@ -13,7 +13,7 @@ $(function() {
         num = num + 1;
 
         // Limiter le nombre de participants par équipe à 5
-        if (num > 4) return;
+        if (num >= 5) return;
 
         $('#userPanel').append($(
             '<div class="row" id="user-' + num + '"> \
@@ -65,39 +65,70 @@ $(function() {
                 showSpeed: 400,
             });
             $('#titre').focus();
+            return;
         } else if (!descProjet) {
             $('#notification').text('Vous devez présenter votre projet en quelques lignes.').miniNotification({
                 time: 3000,
                 showSpeed: 400,
             });
             $('#projet').focus();
+            return;
         } else if ((nomEquipe).length < 2) {
             $('#notification').text('Le nom de l\'équipe doit contenir 2 caractères minimum.').miniNotification({
                 time: 3000,
                 showSpeed: 400,
             });
             $('#equipe').focus();
+            return;
         } else if ((prenomChef).length < 2) {
             $('#notification').text('Le prénom du chef de groupe doit contenir 2 caractères minimum.').miniNotification({
                 time: 3000,
                 showSpeed: 400,
             });
-            $('#prenom').focus();
+            $('#prenom0').focus();
+            return;
         } else if ((nomChef).length < 2) {
             $('#notification').text('Le nom du chef de groupe doit contenir 2 caractères minimum.').miniNotification({
                 time: 3000,
                 showSpeed: 400,
             });
-            $('#nom').focus();
+            $('#nom0').focus();
+            return;
         } else if (!mailChef || !isEmail(mailChef)) {
             $('#notification').text('L\'adresse email du chef de groupe n\'est pas valide.').miniNotification({
                 time: 3000,
                 showSpeed: 400,
             });
-            $('#mail').focus();
+            $('#mail0').focus();
+            return;
         } else {
-            $('#registerForm').submit();
+            for (var i = 1; i <= num; i++) {
+                if (($('#prenom' + i).val()).length < 2) {
+                    $('#notification').text('Le prénom du participant n°' + i + ' est trop court (2 caractères minimum).').miniNotification({
+                        time: 3000,
+                        showSpeed: 400,
+                    });
+                    $('#prenom' + i).focus();
+                    return;
+                } else if (($('#nom' + i).val()).length < 2) {
+                    $('#notification').text('Le nom du participant n°' + i + ' est trop court (2 caractères minimum).').miniNotification({
+                        time: 3000,
+                        showSpeed: 400,
+                    });
+                    $('#nom' + i).focus();
+                    return;
+                } else if (!$('#mail' + i).val() || !isEmail($('#mail' + i).val())) {
+                    $('#notification').text('Le email du participant n°' + i + ' n\'est pas valide.').miniNotification({
+                        time: 3000,
+                        showSpeed: 400,
+                    });
+                    $('#mail' + i).focus();
+                    return;
+                }
+            }
         }
+
+        $('#registerForm').submit();
     });
 });
 
