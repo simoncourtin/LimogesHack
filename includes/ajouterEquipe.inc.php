@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['b']=0;
+$_SESSION['erreurInscription']=0;
 //test si les champs concernant le projet et le nom de l'équipe ont bienété remplis
 if(!isset($_POST['titre']) and !isset($_POST['projet'])and !isset($_POST['equipe']))
 {
