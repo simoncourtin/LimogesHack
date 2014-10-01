@@ -1,19 +1,21 @@
 <?php
-function evoyerMail()
+
+include 'autoload.inc.php';
+include 'config.inc.php';
+include 'ajouterEquipe.inc.php';
+$db = new MyPdo();
+$myManagerEquipe = new EquipeManager($db);
+$myManagerParticipant = new ParticipantManager($db);
+
+$equipes = $myManagerEquipe -> getEquipes();
+foreach($equipes as $value)
 {
-	//mail destinataire
-	$mail='courtin.simon@gmail.com';
-	
-	//message du mail
-	$texte='Vous etes bien inscrit à la lim\'Hack';
-	
-	//l'entête du mail
-	$header='From:Team Lim\'Hack';
-	
-	//sujet du mail
-	$sujet='Validation de l\'inscription';
-	
-	//envoi du mail
-	//mail($mail,$sujet,$message,$header);
+	echo $value['nomEquipe'];
+	$membres = $myManagerEquipe -> getListeMemebres($value['idEquipe']);
+	foreach($membre as $donnee)
+	{
+		echo $donnee['nom'];
+	}
 }
+
 ?>

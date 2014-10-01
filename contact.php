@@ -1,3 +1,8 @@
+<?php
+	include 'includes/autoload.inc.php';
+	include 'includes/config.inc.php';
+	include 'includes/ajouterEquipe.inc.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -45,7 +50,23 @@
                             </div>
                         </form>
                         <?php
-                        } else {
+                        } 
+						else 
+						{
+							if(!empty($_POST['prenom']) and !empty($_POST['nom']) and !empty($_POST['mail']) and !empty($_POST['message']))
+							{
+								$myMailManager = new MailManager($db);
+								$mail = array (
+									'header'=>'From: Formulaire de contact <limogeshack@gmail.com>' . "\r\n",
+									'sujet'=>'Message d\'un visiteur',
+									'mail'=>'limogeshack@gmail.com',
+									'message'=>$_POST['message']."\r\n"
+												.$_POST['prenom'].' '.$_POST['nom']. "\r\n"
+												.$_POST['mail']
+								);
+								$myMail = new Mail($mail);
+								$myMailManager ->envoyer($myMail);
+							}
                         ?>
                         <p>Merci, votre message a bien été envoyé !</p>
                         <?php
