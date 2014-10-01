@@ -7,7 +7,7 @@
                                 &copy; 2014 - LimogesHack
                             </p>
                             <p>
-                                2 Impasse Daguerre<br>
+                                2 bis Impasse Daguerre<br>
                                 87100 Limoges<br>
                                 France
                             </p>

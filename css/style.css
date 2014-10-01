@@ -139,7 +139,6 @@ h4 {
 h1 {
     margin: 0.6em 0;
     font-size: 36px;
-    letter-spacing: -1px;
 }
 
 h2 {
@@ -446,6 +445,15 @@ a.button.grey,
     padding-left: 12px;
 }
 
+.no-gutter [class*="col-"]{
+    padding-right: 0;
+    padding-left: 5px;
+}
+
+.col-1 {
+    width: 100%;
+}
+
 .col-2 {
     width: 50%;
 }
@@ -464,10 +472,15 @@ a.button.grey,
 
 /* Columns for small screens */
 
-@media all and (max-width:640px) {
+@media all and (max-width:768px) {
     .col-2 {
         clear: both;
         width: 100%;
+    }
+
+    .no-gutter [class*="col-"]{
+        padding-right: 12px;
+        padding-left: 12px;
     }
 }
 
@@ -504,7 +517,7 @@ a.button.grey,
 form {
     width: 100%;
     margin: 0 auto;
-    max-width: 768px;
+    /* max-width: 768px; */
     text-align: center;
 }
 
@@ -578,13 +591,13 @@ select {
     padding: 10px;
     border: none;
     outline: none;
-    background-color: #f0f0f0;
+    background-color: #f5f5f5;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    background-color: #e7e7e7;
+    background-color: #eee;
 }
 
 button[type="submit"],
@@ -766,9 +779,18 @@ table {
 }
 
 .content-feature {
+    min-height: 360px;
+    line-height: 264px;
     background-color: #90a4ae;
     background-image: url(../img/feature.jpg);
     background-size: cover;
+}
+
+.v-center {
+    display: inline-block;
+    line-height: normal;
+    width: 100%;
+    vertical-align: middle;
 }
 
 .container {
@@ -1135,9 +1157,4 @@ textareaa {
 
 .h-500 {
     min-height: 500px;
-}
-
-.h-200 {
-    min-height: 200px;
-    line-height: 200px;
 }

@@ -1,10 +1,11 @@
 <?php
 session_start();
 $_SESSION['erreurInscription']=0;
+
 //test si les champs concernant le projet et le nom de l'équipe ont bienété remplis
-if(!isset($_POST['titre']) and !isset($_POST['projet'])and !isset($_POST['equipe']))
+if(!isset($_POST['titre']) AND !isset($_POST['projet']) AND !isset($_POST['equipe']))
 {
-	header('location:index.php');
+	header('location: home');
 }
 
 //connexion base de données

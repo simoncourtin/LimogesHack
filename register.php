@@ -14,10 +14,18 @@
     <body>
         <div id="dotlane-wrapper">
             <header class="nav-header nav-header-fixed dark-shadow">
-                <div class="container container-header nav-header-inner">
+                <div class="container container-header nav-header-inner nav-header-inner-no-title">
                     <a href="home">
-                        <div class="title text-center">LimogesHack</div>
+                        <div class="title">LimogesHack</div>
                     </a>
+                    <nav class="nav-header-inner-right">
+                        <ul>
+                            <li><a href="home" class="current">Accueil</a></li><!--
+                            --><li><a href="about">A propos</a></li><!--
+                            --><li><a href="contact">Contact</a></li><!--
+                            --><li><a href="localisation">Localisation</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </header>
             <div class="content bg-grey-200 h-500">
