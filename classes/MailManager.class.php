@@ -23,8 +23,8 @@ class MailManager
                 . 'VALUES (:entete,:sujet,:message,:adresseDest)');
         $req -> bindValue(':entete',$mail->getHeader(),PDO::PARAM_STR);
         $req -> bindValue(':sujet',$mail->getSujet(),PDO::PARAM_STR);
-        $req -> bindValue(':message',$mail->getMail(),PDO::PARAM_STR);
-        $req -> bindValue(':adresseDest',$mail->getMessage(),PDO::PARAM_STR);
+        $req -> bindValue(':message',$mail->getMessage(),PDO::PARAM_STR);
+        $req -> bindValue(':adresseDest',$mail->getMail(),PDO::PARAM_STR);
         $req -> execute(); 
     }
 }?>

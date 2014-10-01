@@ -1,3 +1,7 @@
+<?php
+	include 'includes/autoload.inc.php';
+	include 'includes/config.inc.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -45,7 +49,24 @@
                             </div>
                         </form>
                         <?php
-                        } else {
+                        } 
+						else 
+						{
+							if(!empty($_POST['prenom']) and !empty($_POST['nom']) and !empty($_POST['mail']) and !empty($_POST['message']))
+							{
+								$db = new MyPdo();
+								$myMailManager = new MailManager($db);
+								$mail = array (
+									'header'=>'From: Notification Site Web' . "\r\n",
+									'sujet'=>'Message d\'un visiteur',
+									'mail'=>'limogeshack@gmail.com',
+									'message'=>$_POST['message']."\r\n"
+												.$_POST['prenom'].' '.$_POST['nom']. "\r\n"
+												.$_POST['mail']
+								);
+								$myMail = new Mail($mail);
+								$myMailManager ->envoyer($myMail);
+							}
                         ?>
                         <p>Merci, votre message a bien été envoyé !</p>
                         <?php
@@ -54,7 +75,7 @@
                     </section>
                 </div>
             </div>
-            <?php require_once("includes/footer.inc.php") ?>
+            <?php require_once("includes/footer.inc.php");?>
             <div id="notification"></div>
         </div>
 

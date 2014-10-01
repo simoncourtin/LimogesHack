@@ -1,11 +1,10 @@
 <?php
 session_start();
 $_SESSION['erreurInscription']=0;
-
 //test si les champs concernant le projet et le nom de l'équipe ont bienété remplis
-if(!isset($_POST['titre']) AND !isset($_POST['projet']) AND !isset($_POST['equipe']))
+if(!isset($_POST['titre']) and !isset($_POST['projet'])and !isset($_POST['equipe']))
 {
-	header('location: home');
+	header('location:index.php');
 }
 
 //connexion base de données
@@ -68,19 +67,23 @@ while(isset($_POST['prenom'.$i]) and $i<5)
 	}
 	$i++;
 }
-//création du mail de confirmation d'inscription
-$myMailManager = new MailManager($db);
-$mail = array (
-	'header'=>'From:Team Lim\'Hack',
-	'sujet'=>'Validation de l\'inscription',
-	'mail'=>null,
-	'message'=>'Vous etes bien inscrit à la lim\'Hack'
-	);
-$myMail = new Mail($mail);
+
 //liaison du l'équipe du projet et des différents participants
 //ajout dans la bdd
 if(count($participants)>0 and $erreurParticipant == false)
 {
+	//création du mail de confirmation d'inscription
+	$myMailManager = new MailManager($db);
+	$mail = array (
+		'header'=>'From: Team LimogesHack <limogeshack@gmail.com>' . "\r\n",
+		'sujet'=>'Comfirmation d\'inscription à la LimogesHack',
+		'mail'=>null,
+		'message'=>'Votre inscription a bien été prise en compte,
+					Bon courage et à samedi,
+					L\'équipe LimogeHack'
+	);
+	$myMail = new Mail($mail);
+	
 	$lastid = $myManagerEquipe ->add($monEquipe);
 	$monProjet -> setIdEquipe($lastid);
 	$myManagerProjet ->add($monProjet);
@@ -89,7 +92,15 @@ if(count($participants)>0 and $erreurParticipant == false)
 		$value -> setEquipe($lastid);
 		$myManagerParticipant -> add($value);
 		$myMail->setMail($value -> getMail());
-		$myMailManager -> add($myMail);
+		$myMailManager -> envoyer($myMail);
 	}
+	$mailServ = array (
+					'header'=>'From: Notification Site Web' . "\r\n",
+					'sujet'=>'Insciption d\'une équipe',
+					'mail'=>'limogeshack@gmail.com',
+					'message'=>'Une équipe vient de s\'inscrire'
+					);
+	$mailServeur = new Mail($mailServ);
+	$myMailManager -> envoyer($myMail);
 }
 ?>

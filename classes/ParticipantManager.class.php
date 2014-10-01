@@ -32,6 +32,17 @@ class ParticipantManager
 		return $participant;
 		
 	}
+	public function getParticipantEquipe($idEquipe)
+	{
+		$req = $this-> db-> prepare('SELECT * 
+									FROM participant   
+									WHERE idEquipe = :idEquipe');
+		$req -> bindValue(':idEquipe',$idEquipe,PDO::PARAM_INT);
+        $req -> execute();
+		$participant =  $req->fetchAll();
+		return $participant;
+		
+	}
 	public function getParticiapants()
 	{
 		$req = $this-> db-> prepare('SELECT * 
@@ -40,6 +51,7 @@ class ParticipantManager
 		$participants =  $req->fetchAll();
 		return $participants;
 	}
+	
 	public function verifParticipant($participant)
 	{
 		$req = $this-> db-> prepare('SELECT * 
