@@ -14,11 +14,12 @@ class MailManager
 	
 	public function envoyer($mail)
 	{
-		$header="From:".$mail->getHeader().".<limogeshack@gmail.com>\r\n". 
-				"Reply-To: Team LimogesHack <limogeshack@gmail.com>"
-				"MIME-Version: 1.0" . "\r\n" . 
-				"Content-type: multipart/alternative;" . "\r\n"; 
-		mail($mail->getMail(),$mail->getSujet(),$mail->getMessage(),$header);
+		$headers  = 'MIME-Version: 1.0' . "\n";
+		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\n";
+		$headers .= 'Reply-To: Team LimogesHack <limogeshack@gmail.com>' . "\n" ;
+		$headers .= 'Return-path: LimogesHack <limogeshack@gmail.com>' . "\n" ;
+		$headers .= 'From:'.$mail->getHeader().'.<limogeshack@gmail.com>' . "\r\n";
+		mail($mail->getMail(),$mail->getSujet(),$mail->getMessage(),$headers);
 		$this->add($mail);
 	}
 	
