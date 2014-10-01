@@ -57,10 +57,10 @@
 								$db = new MyPdo();
 								$myMailManager = new MailManager($db);
 								$mail = array (
-									'header'=>'From: Notification Site Web' . "\r\n",
+									'header'=>'Notification Site Web',
 									'sujet'=>'Message d\'un visiteur',
 									'mail'=>'limogeshack@gmail.com',
-									'message'=>$_POST['message']."\r\n"
+									'message'=>$_POST['message']."\n"
 												.$_POST['prenom'].' '.$_POST['nom']. "\r\n"
 												.$_POST['mail']
 								);
