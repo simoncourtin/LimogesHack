@@ -46,7 +46,7 @@ class EquipeManager
 	}
 	public function getEquipes()
 	{
-		$req = $this-> db-> prepare('SELECT idEquipe nomEquipe,dateCrea 
+		$req = $this-> db-> prepare('SELECT idEquipe, nomEquipe,dateCrea 
 									FROM equipe');
         $req -> execute();
 		$equipes =  $req->fetchAll();

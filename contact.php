@@ -1,7 +1,6 @@
 <?php
 	include 'includes/autoload.inc.php';
 	include 'includes/config.inc.php';
-	include 'includes/ajouterEquipe.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -55,9 +54,10 @@
 						{
 							if(!empty($_POST['prenom']) and !empty($_POST['nom']) and !empty($_POST['mail']) and !empty($_POST['message']))
 							{
+								$db = new MyPdo();
 								$myMailManager = new MailManager($db);
 								$mail = array (
-									'header'=>'From: Formulaire de contact <limogeshack@gmail.com>' . "\r\n",
+									'header'=>'From: Notification Site Web' . "\r\n",
 									'sujet'=>'Message d\'un visiteur',
 									'mail'=>'limogeshack@gmail.com',
 									'message'=>$_POST['message']."\r\n"
@@ -75,7 +75,7 @@
                     </section>
                 </div>
             </div>
-            <?php require_once("includes/footer.inc.php") ?>
+            <?php require_once("includes/footer.inc.php");?>
             <div id="notification"></div>
         </div>
 

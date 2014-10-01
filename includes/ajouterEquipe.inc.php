@@ -1,11 +1,10 @@
 <?php
 session_start();
 $_SESSION['erreurInscription']=0;
-
 //test si les champs concernant le projet et le nom de l'équipe ont bienété remplis
-if(!isset($_POST['titre']) AND !isset($_POST['projet']) AND !isset($_POST['equipe']))
+if(!isset($_POST['titre']) and !isset($_POST['projet'])and !isset($_POST['equipe']))
 {
-	header('location: home');
+	header('location:index.php');
 }
 
 //connexion base de données
@@ -76,7 +75,7 @@ if(count($participants)>0 and $erreurParticipant == false)
 	//création du mail de confirmation d'inscription
 	$myMailManager = new MailManager($db);
 	$mail = array (
-		'header'=>'From: Team LimogesHack <limogeshack@gmail.com>' . "\r\n";,
+		'header'=>'From: Team LimogesHack <limogeshack@gmail.com>' . "\r\n",
 		'sujet'=>'Comfirmation d\'inscription à la LimogesHack',
 		'mail'=>null,
 		'message'=>'Votre inscription a bien été prise en compte,
@@ -93,7 +92,15 @@ if(count($participants)>0 and $erreurParticipant == false)
 		$value -> setEquipe($lastid);
 		$myManagerParticipant -> add($value);
 		$myMail->setMail($value -> getMail());
-		$myMailManager -> add($myMail);
+		$myMailManager -> envoyer($myMail);
 	}
+	$mailServ = array (
+					'header'=>'From: Notification Site Web' . "\r\n",
+					'sujet'=>'Insciption d\'une équipe',
+					'mail'=>'limogeshack@gmail.com',
+					'message'=>'Une équipe vient de s\'inscrire'
+					);
+	$mailServeur = new Mail($mailServ);
+	$myMailManager -> envoyer($myMail);
 }
 ?>
