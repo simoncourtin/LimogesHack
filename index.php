@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Journée entière pendant laquelle des équipes volontaires s'en donneront à cœur joie pour réaliser un projet informatique de leur choix." />
+        <meta name="keywords" content="Limoges, Hack, entertainement, project, team, programming, fun, projet, 24h, événement, équipe, code, week, programmation, coding" />
         <title>LimogesHack - La journée du code</title>
         <link href="css/style.css" rel="stylesheet">
     </head>
@@ -32,7 +34,7 @@
                         <div class="row text-center lead">
                             <div class="col-3">2 bis impasse Daguerre</div>
                             <div class="col-3">12 heures</div>
-                            <div class="col-3">18 octobre 2014</div>
+                            <div class="col-3">18 octobre 2014<br>10h - 22h</div>
                         </div>
                     </section>
                 </div>
