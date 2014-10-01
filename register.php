@@ -28,7 +28,7 @@
                     </nav>
                 </div>
             </header>
-            <div class="content bg-grey-200 h-500">
+            <div class="content bg-grey-200 h-640">
                 <div class="container">
                     <section id="section1">
                         <?php 

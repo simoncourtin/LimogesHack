@@ -31,12 +31,12 @@
                     </nav>
                 </div>
             </header>
-            <div class="content content-no-pdb bg-grey-200 h-500">
+            <div class="content content-no-pdb bg-grey-200 h-640">
                 <div class="container">
                     <section id="section1">
                         <h1>Localisation</h1>
                         <p class="text-center">
-                            2 Impasse Daguerre<br>
+                            2 bis Impasse Daguerre<br>
                             87100 Limoges<br>
                             France
                         </p>
