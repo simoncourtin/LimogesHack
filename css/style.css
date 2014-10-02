@@ -525,7 +525,7 @@ a.button-white,
 form {
     width: 100%;
     margin: 0 auto;
-    /* max-width: 768px; */
+    max-width: 768px;
     text-align: center;
 }
 
