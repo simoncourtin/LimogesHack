@@ -75,8 +75,8 @@ if(count($participants)>0 and $erreurParticipant == false)
 	//création du mail de confirmation d'inscription
 	$myMailManager = new MailManager($db);
 	$mail = array (
-		'header'=>'Team LimogesHack',
-		'sujet'=>'Comfirmation d\'inscription à la LimogesHack',
+		'header'=>'From:Team LimogesHack <limogeshack@gmail.com>' . "\r\n",
+		'sujet'=>'Confirmation d\'inscription à la LimogesHack',
 		'mail'=>null,
 		'message'=>'Votre inscription a bien été prise en compte,'.
 					'Bon courage et à samedi,'.
