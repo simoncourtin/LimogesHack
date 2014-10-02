@@ -54,7 +54,7 @@ include 'includes/config.inc.php';
                                 $db = new MyPdo();
                                 $myMailManager = new MailManager($db);
                                 $mail = array (
-                                'header'=>'Content-type: text/html; charset=iso-8859-1' . "\r\n",
+                                'header'=>htmlspecialchars($_POST['mail']),
                                 'sujet'=>'Message de la part de '. htmlspecialchars($_POST['prenom']) . ' ' . htmlspecialchars($_POST['nom']) . ' (' . htmlspecialchars($_POST['mail']) . ')',
                                 'mail'=>'limogeshack@gmail.com',
                                 'message'=>
