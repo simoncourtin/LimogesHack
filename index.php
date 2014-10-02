@@ -150,7 +150,7 @@
                                 </div>
                             </div>
                                 
-                            <div class="text-right">
+                            <div class="text-center">
                                 <button type="button" class="button button-grey" name="addUser" id="addUser">+ Ajouter un membre</button>
                             </div>
                             
