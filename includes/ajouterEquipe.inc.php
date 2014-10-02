@@ -78,9 +78,7 @@ if(count($participants)>0 and $erreurParticipant == false)
 		'header'=>'Team LimogesHack <limogeshack@gmail.com>',
 		'sujet'=>'Confirmation d\'inscription à la LimogesHack',
 		'mail'=>null,
-		'message'=>'Votre inscription a bien été prise en compte,'.
-					'Bon courage et à samedi,'.
-					'L\'équipe LimogeHack'
+		'message'=>$mailInscription 
 	);
 	$myMail = new Mail($mail);
 	
