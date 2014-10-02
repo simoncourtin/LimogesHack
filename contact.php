@@ -29,7 +29,7 @@
             </header>
             <div class="content h-640">
                 <div class="container">
-                    <section id="section1">
+                    <section>
                         <h1>Contact</h1>
                         <?php
                         if (!isset($_POST['message'])) {
@@ -49,24 +49,21 @@
                             </div>
                         </form>
                         <?php
-                        } 
-						else 
-						{
-							if(!empty($_POST['prenom']) and !empty($_POST['nom']) and !empty($_POST['mail']) and !empty($_POST['message']))
-							{
-								$db = new MyPdo();
-								$myMailManager = new MailManager($db);
-								$mail = array (
-									'header'=>'Notification Site Web',
-									'sujet'=>'Message d\'un visiteur',
-									'mail'=>'limogeshack@gmail.com',
-									'message'=>$_POST['message']."\n"
-												.$_POST['prenom'].' '.$_POST['nom']. "\r\n"
-												.$_POST['mail']
-								);
-								$myMail = new Mail($mail);
-								$myMailManager ->envoyer($myMail);
-							}
+                        } else {
+                            if(!empty($_POST['prenom']) and !empty($_POST['nom']) and !empty($_POST['mail']) and !empty($_POST['message'])) {
+                                $db = new MyPdo();
+                                $myMailManager = new MailManager($db);
+                                $mail = array (
+                                'header'=>'Notification Site Web',
+                                'sujet'=>'Message d\'un visiteur',
+                                'mail'=>'limogeshack@gmail.com',
+                                'message'=>$_POST['message']."\n"
+                                .$_POST['prenom'].' '.$_POST['nom']. "\r\n"
+                                .$_POST['mail']
+                            );
+                            $myMail = new Mail($mail);
+                            $myMailManager ->envoyer($myMail);
+                        }
                         ?>
                         <p>Merci, votre message a bien été envoyé !</p>
                         <?php

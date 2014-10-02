@@ -78,9 +78,9 @@ if(count($participants)>0 and $erreurParticipant == false)
 		'header'=>'From:Team LimogesHack <limogeshack@gmail.com>' . "\r\n",
 		'sujet'=>'Confirmation d\'inscription à la LimogesHack',
 		'mail'=>null,
-		'message'=>'Votre inscription a bien été prise en compte,
-					Bon courage et à samedi,
-					L\'équipe LimogeHack'
+		'message'=>'Votre inscription a bien été prise en compte,'.
+					'Bon courage et à samedi,'.
+					'L\'équipe LimogeHack'
 	);
 	$myMail = new Mail($mail);
 	
@@ -95,12 +95,12 @@ if(count($participants)>0 and $erreurParticipant == false)
 		$myMailManager -> envoyer($myMail);
 	}
 	$mailServ = array (
-					'header'=>'From: Notification Site Web' . "\r\n",
+					'header'=>'Notification Site Web',
 					'sujet'=>'Insciption d\'une équipe',
 					'mail'=>'limogeshack@gmail.com',
 					'message'=>'Une équipe vient de s\'inscrire'
 					);
 	$mailServeur = new Mail($mailServ);
-	$myMailManager -> envoyer($myMail);
+	$myMailManager -> envoyer($mailServeur);
 }
 ?>
