@@ -75,7 +75,7 @@ if(count($participants)>0 and $erreurParticipant == false)
 	//création du mail de confirmation d'inscription
 	$myMailManager = new MailManager($db);
 	$mail = array (
-		'header'=>'Team LimogesHack <limogeshack@gmail.com>',
+		'header'=>'LimogesHack',
 		'sujet'=>'Confirmation d\'inscription à la LimogesHack',
 		'mail'=>null,
 		'message'=>$mailInscription 
@@ -93,10 +93,10 @@ if(count($participants)>0 and $erreurParticipant == false)
 		$myMailManager -> envoyer($myMail);
 	}
 	$mailServ = array (
-					'header'=>'Notification Site Web',
-					'sujet'=>'Insciption d\'une équipe',
+					'header'=>'LimogesHack',
+					'sujet'=>'Inscription d\'une équipe',
 					'mail'=>'limogeshack@gmail.com',
-					'message'=>'Une équipe vient de s\'inscrire'
+					'message'=>'Une équipe vient de s\'inscrire à la session du samedi 18 octobre 2014'
 					);
 	$mailServeur = new Mail($mailServ);
 	$myMailManager -> envoyer($mailServeur);
