@@ -73,6 +73,7 @@ while(isset($_POST['prenom'.$i]) and $i<5)
 if(count($participants)>0 and $erreurParticipant == false)
 {
 	//création du mail de confirmation d'inscription
+	include 'mailType.inc.php';
 	$mail = array (
 		'header'=>'LimogesHack',
 		'sujet'=>'Confirmation d\'inscription à la LimogesHack',

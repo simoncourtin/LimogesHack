@@ -70,6 +70,36 @@ $mailInscription = '<!DOCTYPE html>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
+
+                                                        <table class="w580"  width="580" cellpadding="0" cellspacing="0" border="0">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="w580"  width="580">
+                                                                        <h2 style="color:#000; font-size:22px; padding-top:12px;">Récapitulatif de vos informations</h2>
+                                                                        <div align="left" class="article-content">
+                                                                            <p><strong>Nom du projet :</strong> '.$_POST['titre'].'</p>
+                                                                            <p><strong>Description du projet :</strong></p>
+                                                                            <p>'.$_POST['projet'].'</p>
+                                                                            <p><strong>Nom de l\'équipe :</strong> '.$_POST['equipe'].'</p>
+                                                                            <p><strong>Chef du projet :</strong> '.$_POST['prenom0'].' '.$_POST['nom0'].' &lt;'.$_POST['mail0'].'&gt;</p>
+                                                                            <p><strong>Autres membres :</strong></p>
+																			';
+																			$i=1;
+																			while(isset($_POST['prenom'.$i]) and $i<5)
+																			{
+																			
+																				$mailInscription.= '<p>'.$_POST['prenom'.$i].' '.$_POST['nom'.$i].' &lt;'.$_POST['mail'.$i].'&gt;</p>';
+																				$i++;
+																			}
+																			$mailInscription.='
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="w580"  width="580" height="1" bgcolor="#f7f7f7"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
                                                         
                                                         <table class="w580"  width="580" cellpadding="0" cellspacing="0" border="0">
                                                             <tbody>
@@ -78,7 +108,7 @@ $mailInscription = '<!DOCTYPE html>
                                                                         <br>
                                                                         <div align="left" class="article-content">
                                                                             <p>N\'oubliez pas votre matériel le jour de l\'événement !</p>
-                                                                            <p>A samedi 18 octobre pour une journée chargée en animation !</p>
+                                                                            <p>A samedi 18 octobre 10h pour une journée chargée en animation !</p>
                                                                             <br>
                                                                         </div>
                                                                     </td>
