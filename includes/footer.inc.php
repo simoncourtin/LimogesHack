@@ -21,7 +21,7 @@
                                 <a href="about">Qui sommes-nous ?</a><br>
                                 <a href="contact">Contact</a><br>
                                 <a href="localisation">Localisation</a><br>
-                                <img src="img/twitter.png" alt="Twitter" class="icon-social"><a href="https://twitter.com/LimogesHack" target="blank">@limogeshack</a>
+                                <img src="img/twitter.png" alt="Twitter" class="icon-social"><a href="https://twitter.com/LimogesHack" target="blank">@LimogesHack</a>
                             </p>
                         </div>
                     </div>

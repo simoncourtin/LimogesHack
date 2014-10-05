@@ -37,7 +37,7 @@
                     <section>
                         <h2>Remerciements</h2>
                         <p>Un remerciement tout spécial à Limouzi Lab, grâce à qui l’événement est possible.</p>
-                        <p>LimouziLab est l’endroit idéal pour réaliser un projet informatique, en tout genre. C’est dans ce cadre que cette association nous prête leur local : FabLab (2 bis impasse Daguerre, 87000 Limoges).</p>
+                        <p>LimouziLab est l’endroit idéal pour réaliser un projet informatique, en tout genre. C’est dans ce cadre que cette association nous prête leur local : FabLab (2 bis impasse Daguerre, 87100 Limoges).</p>
                         <p>Merci également à Clément Chadeyron, pour son aide précieuse.</p></p>
                         <p class="text-center"><a href="http://lab.limouzi.org" target="blank">Plus d'informations sur ce lieu</a></p>
                         <p class="text-center"><a href="http://lab.limouzi.org" target="blank"><img src="img/limouzilab_lg.png" alt="LimouziLab" width="200"></a></p>
