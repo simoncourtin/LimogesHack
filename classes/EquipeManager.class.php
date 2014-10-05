@@ -21,10 +21,9 @@ class EquipeManager
     }
 	public function getListeMemebres($id)
 	{
-		$req = $this-> db-> prepare('SELECT p.nom,p.prenom,p.mail,p.dateIncr 
+		$req = $this-> db-> prepare('SELECT p.nom,p.prenom,p.mail,p.dateIncr
 									FROM equipe e 
 									INNER JOIN participant p ON e.idEquipe = p.equipe 
-									INNER JOIN projet pr ON p.equipe=pr.idEquipe 
 									WHERE e.idEquipe =:idEquipe');
         $req -> bindValue(':idEquipe',$id,PDO::PARAM_INT);
         $req -> execute(); 
@@ -35,8 +34,9 @@ class EquipeManager
 	
 	public function getEquipeId($id)
 	{
-		$req = $this-> db-> prepare('SELECT idEquipe ,nomEquipe,dateCrea 
-									FROM equipe   
+		$req = $this-> db-> prepare('SELECT e.idEquipe ,nomEquipe,dateCrea,pr.nomProject,pr.description  
+									FROM equipe e
+									INNER JOIN projet pr ON e.idEquipe=pr.idEquipe
 									WHERE idEquipe = :idEquipe');
 		$req -> bindValue(':idEquipe',$id,PDO::PARAM_INT);
         $req -> execute();
@@ -46,8 +46,9 @@ class EquipeManager
 	}
 	public function getEquipes()
 	{
-		$req = $this-> db-> prepare('SELECT idEquipe, nomEquipe,dateCrea 
-									FROM equipe');
+		$req = $this-> db-> prepare('SELECT e.idEquipe ,nomEquipe,dateCrea,pr.nomProject,pr.description  
+									FROM equipe e
+									INNER JOIN projet pr ON e.idEquipe=pr.idEquipe ');
         $req -> execute();
 		$equipes =  $req->fetchAll();
 		return $equipes;

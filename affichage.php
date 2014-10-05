@@ -20,6 +20,9 @@ function afficherEquipes($ManagerEquipe,$ManagerParticipant) {
                     <?php
                     }
                     ?>
+				<br/>
+				<h4>Projet : <?php echo $value['nomProject'] ?></h4>
+				<p><?php echo $value['description'] ?></p>
                 </section>
             </div>
         </div>
