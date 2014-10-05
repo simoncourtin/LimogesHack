@@ -1175,3 +1175,9 @@ textareaa {
     position: absolute;
     left: -20px;
 }
+
+@media(max-width:768px) {
+    footer img {
+        display: none;
+    }
+}
