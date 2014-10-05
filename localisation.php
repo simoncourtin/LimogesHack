@@ -35,6 +35,7 @@
                 <div class="container">
                     <section id="section1">
                         <h1>Localisation</h1>
+                        <p class=" text-center lead">FabLab - LimouziLab</p>
                         <p class="text-center">
                             2 bis Impasse Daguerre<br>
                             87100 Limoges<br>
@@ -66,7 +67,7 @@
                 var marker = new google.maps.Marker({
                     position: myLatlng,
                     map: map,
-                    title: 'Limoges Hack à FabLab'
+                    title: 'LimogesHack au FabLab - LimouziLab'
                 });
             }
             google.maps.event.addDomListener(window, 'load', initialize);

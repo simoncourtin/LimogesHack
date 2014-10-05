@@ -24,6 +24,10 @@
                             </p>
                         </div>
                     </div>
+                    <p class="text-center">
+                        <a href="http://codeweek.eu/"><img src="img/codeweek.png" alt="Code Week"></a>
+                        <a href="http://lab.limouzi.org/"><img src="img/limouzilab.png" alt="LimouziLab"></a>
+                    </p>
                     <p class="text-center">Made with <a href="http://dotlane.francoischalifour.com" target="blank">Dotlane</a></p>
                 </div>
             </footer>

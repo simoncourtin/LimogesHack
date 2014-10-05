@@ -82,7 +82,7 @@
                 <div class="container fadeIn">
                     <section>
                         <h2>De quoi ai-je besoin ?</h2>
-                        <p>Il est nécessaire d’amener son matériel (ordinateur portable, ordinateur fixe, etc.). Vous pouvez également amener de la nourriture et du matériel de couchage pour se créer un lieu confortable.</p>
+                        <p>Il est nécessaire d’amener son matériel (ordinateur portable, ordinateur fixe, etc.). Vous pouvez également amener de la nourriture et du matériel de couchage pour vous créer un lieu confortable.</p>
                         <p>Une cafétaria avec de la nourriture et des boissons sera à votre disposition tout au long de l'évènement.</p>
                     </section>
                 </div>
