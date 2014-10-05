@@ -20,13 +20,14 @@
                             <p>
                                 <a href="about">Qui sommes-nous ?</a><br>
                                 <a href="contact">Contact</a><br>
-                                <a href="localisation">Localisation</a>
+                                <a href="localisation">Localisation</a><br>
+                                <img src="img/twitter.png" alt="Twitter" class="icon-social"><a href="https://twitter.com/LimogesHack" target="blank">@limogeshack</a>
                             </p>
                         </div>
                     </div>
                     <p class="text-center">
-                        <a href="http://codeweek.eu/"><img src="img/codeweek.png" alt="Code Week"></a>
-                        <a href="http://lab.limouzi.org/"><img src="img/limouzilab.png" alt="LimouziLab"></a>
+                        <a href="http://codeweek.eu/" target="blank"><img src="img/codeweek.png" alt="Code Week"></a>
+                        <a href="http://lab.limouzi.org" target="blank"><img src="img/limouzilab.png" alt="LimouziLab"></a>
                     </p>
                     <p class="text-center">Made with <a href="http://dotlane.francoischalifour.com" target="blank">Dotlane</a></p>
                 </div>

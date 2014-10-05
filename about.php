@@ -27,7 +27,7 @@
                 <div class="container fadeIn">
                     <section>
                         <h2>A propos</h2>
-                        <p>LimogesHack est un événement mené par des étudiants d'IUT du Limousin (DUT Informatique) motivés. Notre objectif est de rassembler des passionnés de l'informatique afin d'élargir nos connaissances et notre savoir.</p>
+                        <p>LimogesHack est un événement mené par des étudiants d'IUT du Limousin (DUT Informatique), dans le cadre de la <a href="http://codeweek.eu/" target="blank">Code Week</a>, semaine européenne destinée à promouvoir le code. Notre objectif est de rassembler des passionnés de l'informatique afin d'élargir nos connaissances et notre savoir.</p>
                         <p>Cet événement est organisé dans le cadre de notre association <em>OEIL</em> (Organisation des Etudiants en Informatique de Limoges).</p>
                     </section>
                 </div>
@@ -40,6 +40,7 @@
                         <p>Le Limouzi Lab est une association loi 1901 créée en 2012 au sein du réseaux des Fab Lab européens. Il a comme objectif de devenir le Fab Lab spécialisé pour l’impression 3D de céramiques, ainsi que de la domotique en France.</p>
                         <p>Sa particularité est avant tout de privilégier le Do It Yourself (faites-le vous-même), par l’utilisation de logiciels (open source), de contenus (licence creative communs), de matériels libres (open hardware).</p>
                         <p class="text-center"><a href="http://lab.limouzi.org" target="blank">Plus d'informations sur ce lieu</a></p>
+                        <p class="text-center"><a href="http://lab.limouzi.org" target="blank"><img src="img/limouzilab_lg.png" alt="LimouziLab" width="200"></a></p>
                     </section>
                 </div>
             </div>

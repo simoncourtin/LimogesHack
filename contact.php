@@ -27,7 +27,33 @@ include 'includes/config.inc.php';
                     </nav>
                 </div>
             </header>
-            <div class="content h-640">
+            <div class="content">
+                <div class="container fadeIn">
+                    <section>
+                        <h2>Presse</h2>
+                        <div class="row">
+                            <div class="col-3 text-center">
+                                <a href="files/limogeshack_flyer.pdf" target="blank" title="Télécharger l'affiche"><img src="img/affiche.jpg" alt="Affiche LimogesHack" width="300"></a>
+                                <p>
+                                    <a href="files/limogeshack_flyer.pdf" target="blank">Affiche LimogesHack</a>
+                                </p>
+                            </div>
+                            <div class="col-3-2">
+                                <p>A l’occasion de la Code Week, nous avons souhaité créer un événement pour permettre à des personnes motivées de progresser ensemble. Pour en savoir plus sur cette semaine européenne du code, rendez-vous sur le <a href="http://codeweek.eu" target="blank">site officiel</a>.
+                                <p>C’est avant tout un espace convivial que nous voulons : il s’agit d’un moment de rencontre et non de compétition - bien que des récompenses sont prévues.</p>
+                                <p>Cet événement, aussi surnommé “Les 12 heures du code”, se déroule le samedi 18 octobre de 10h à 22h.</p>
+                                <p>Nous sommes jeunes et nous souhaitons faire diffuser cet événement. Si vous aussi, vous êtes intéressés, n’hésitez pas à nous contacter :</p>
+                                <ul>
+                                    <li><a href="http://limogeshack.sixfoisneuf.fr">http://limogeshack.sixfoisneuf.fr</a></li>
+                                    <li><a href="https://twitter.com/LimogesHack">https://twitter.com/LimogesHack</a></li>
+                                    <li><a href="mailto:limogeshack@gmail.com">limogeshack@gmail.com</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="content">
                 <div class="container">
                     <section>
                         <h1>Contact</h1>
