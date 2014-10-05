@@ -484,7 +484,8 @@ a.button-white,
 /* Columns for small screens */
 
 @media all and (max-width:768px) {
-    .col-2 {
+    .col-2,
+    .col-3-2 {
         clear: both;
         width: 100%;
     }
