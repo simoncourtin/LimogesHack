@@ -1,6 +1,7 @@
 <?php
 include 'includes/autoload.inc.php';
 include 'includes/config.inc.php';
+include 'includes/func.mail.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -78,7 +79,6 @@ include 'includes/config.inc.php';
                         } else {
                             if(!empty($_POST['prenom']) and !empty($_POST['nom']) and !empty($_POST['mail']) and !empty($_POST['message'])) {
                                 $db = new MyPdo();
-                                $myMailManager = new MailManager($db);
                                 $mail = array (
                                 'header'=>htmlspecialchars($_POST['mail']),
                                 'sujet'=>'Message de la part de '. htmlspecialchars($_POST['prenom']) . ' ' . htmlspecialchars($_POST['nom']) . ' (' . htmlspecialchars($_POST['mail']) . ')',
@@ -187,7 +187,12 @@ include 'includes/config.inc.php';
 </html>'
                             );
                             $myMail = new Mail($mail);
-                            $myMailManager ->envoyer($myMail);
+                            $resultEnvoi = smtpMailer($myMail->getMail(), 'limogeshack@gmail.com', $myMail->getHeader(),$myMail->getSujet(),$myMail->getMessage() );
+							if (true !== $resultEnvoi)
+							{
+								// erreur -- traiter l'erreur
+								echo $resultEnvoi;
+							}
                         }
                         ?>
                         <p>Merci, votre message a bien été envoyé !</p>

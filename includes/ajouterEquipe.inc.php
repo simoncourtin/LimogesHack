@@ -73,7 +73,6 @@ while(isset($_POST['prenom'.$i]) and $i<5)
 if(count($participants)>0 and $erreurParticipant == false)
 {
 	//création du mail de confirmation d'inscription
-	$myMailManager = new MailManager($db);
 	$mail = array (
 		'header'=>'LimogesHack',
 		'sujet'=>'Confirmation d\'inscription à la LimogesHack',
@@ -90,15 +89,28 @@ if(count($participants)>0 and $erreurParticipant == false)
 		$value -> setEquipe($lastid);
 		$myManagerParticipant -> add($value);
 		$myMail->setMail($value -> getMail());
-		$myMailManager -> envoyer($myMail);
+		//envoi du mail au différent membres
+		$resultEnvoi = smtpMailer($myMail->getMail(), 'limogeshack@gmail.com', 'Limoges Hack',$myMail->getSujet(),$myMail->getMessage() );
+		if (true !== $resultEnvoi)
+		{
+			// erreur -- traiter l'erreur
+			echo $resultEnvoi;
+		}
+		
 	}
 	$mailServ = array (
 					'header'=>'LimogesHack',
-					'sujet'=>'Inscription d\'une équipe',
+					'sujet'=>'LimogesHack : Inscription d\'une équipe',
 					'mail'=>'limogeshack@gmail.com',
-					'message'=>'Une équipe vient de s\'inscrire à la session du samedi 18 octobre 2014'
+					'message'=>'Une équipe vient de s\'inscrire à la session du samedi 18 octobre 2014.'
 					);
 	$mailServeur = new Mail($mailServ);
-	$myMailManager -> envoyer($mailServeur);
+	//envoi du mail au serveur
+	$resultEnvoi = smtpMailer($mailServeur->getMail(), 'limogeshack@gmail.com', $mailServeur->getHeader(),$mailServeur->getSujet(),$mailServeur->getMessage() );
+	if (true !== $resultEnvoi)
+	{
+		// erreur -- traiter l'erreur
+		echo $resultEnvoi;
+	}
 }
 ?>

@@ -2,7 +2,9 @@
 	include 'includes/autoload.inc.php';
 	include 'includes/config.inc.php';
 	include 'includes/mailType.inc.php';
+	include 'includes/func.mail.inc.php';
 	include 'includes/ajouterEquipe.inc.php';
+	
 	
 ?>
 <!DOCTYPE html>
