@@ -35,10 +35,10 @@
             <div class="content">
                 <div class="container fadeIn">
                     <section>
-                        <h2>Lieu</h2>
-                        <p>La LimogesHack se déroule au FabLab Limouzi Lab (2 bis Impasse Daguerre).</p>
-                        <p>Le Limouzi Lab est une association loi 1901 créée en 2012 au sein du réseaux des Fab Lab européens. Il a comme objectif de devenir le Fab Lab spécialisé pour l’impression 3D de céramiques, ainsi que de la domotique en France.</p>
-                        <p>Sa particularité est avant tout de privilégier le Do It Yourself (faites-le vous-même), par l’utilisation de logiciels (open source), de contenus (licence Creative Commons), de matériels libres (open hardware).</p>
+                        <h2>Remerciements</h2>
+                        <p>Un remerciement tout spécial à Limouzi Lab, grâce à qui l’événement est possible.</p>
+                        <p>LimouziLab est l’endroit idéal pour réaliser un projet informatique, en tout genre. C’est dans ce cadre que cette association nous prête leur local : FabLab (2 bis impasse Daguerre, 87000 Limoges).</p>
+                        <p>Merci également à Clément Chadeyron, pour son aide précieuse.</p></p>
                         <p class="text-center"><a href="http://lab.limouzi.org" target="blank">Plus d'informations sur ce lieu</a></p>
                         <p class="text-center"><a href="http://lab.limouzi.org" target="blank"><img src="img/limouzilab_lg.png" alt="LimouziLab" width="200"></a></p>
                     </section>
