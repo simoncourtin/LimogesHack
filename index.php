@@ -63,7 +63,7 @@
                 <div class="container fadeIn">
                     <section>
                         <h2>Qu'est-ce que c'est ?</h2>
-                        <p>LimogesHack est un évènement inspiré de LeedsHack. Il s’agit d’un évènement rassemblant les personnes intéressées par diverses matières touchant à l’informatique, à savoir la programmation, le design, la robotique, etc. L’évènement se déroule sur 12 heures, et le but final est, en équipe, de rassembler ses connaissances et de créer un produit final.</p>
+                        <p>LimogesHack est un évènement inspiré de LeedsHack. Il s’agit d’un évènement rassemblant les personnes intéressées par diverses matières touchant à l’informatique, à savoir la programmation, le design, la robotique, etc. L’évènement se déroule sur 12 heures, et le but final est, en équipe, de rassembler ses connaissances et de créer un produit fonctionnel.</p>
                         <p>L'objectif de LimogesHack est de créer des liens entre les participants et de s'amuser tout en montant un projet de groupe. Bien que l'évènement dure 12 heures, des activités ainsi que des conférences auront lieu pour s'aérer l'esprit et ainsi être plus productif.</p>
                         <p>Au bout des 12 heures, chaque groupe devra présenter son produit final qui sera noté par les autres participants.</p>
                     </section>
