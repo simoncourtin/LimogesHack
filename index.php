@@ -39,6 +39,9 @@
                             <div class="col-2 huge text-right">
                                 <p>samedi<br>18 oct.<br> 2014</p>
                             </div>
+			    <p class="text-center">
+			      <a href="#inscription" class="button button-red">S'inscrire</a>
+			    </p>
                         </div>
                     </section>
                 </div>
@@ -100,7 +103,7 @@
             </div>
             <div class="content">
                 <div class="container fadeIn">
-                    <section>
+                    <section id="inscription">
                         <h2>S'inscrire</h2>
                         <p class="text-center">Si vous êtes intéressé, vous savez ce qu'il vous reste à faire, c'est gratuit !</p>
                         <form action="register" method="post" id="registerForm">
