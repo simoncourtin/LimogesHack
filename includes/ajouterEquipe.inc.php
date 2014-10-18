@@ -107,7 +107,8 @@ if(count($participants)>0 and $erreurParticipant == false)
 					);
 	$mailServeur = new Mail($mailServ);
 	//envoi du mail au serveur
-	$resultEnvoi = smtpMailer($mailServeur->getMail(), 'limogeshack@gmail.com', $mailServeur->getHeader(),$mailServeur->getSujet(),$mailServeur->getMessage() );
+	//$resultEnvoi = smtpMailer($mailServeur->getMail(), 'limogeshack@gmail.com', $mailServeur->getHeader(),$mailServeur->getSujet(),$mailServeur->getMessage() );
+        // NOPE.AVI
 	if (true !== $resultEnvoi)
 	{
 		// erreur -- traiter l'erreur
