@@ -3,7 +3,8 @@
 	include 'includes/config.inc.php';
 	include 'includes/func.mail.inc.php';
 	include 'includes/ajouterEquipe.inc.php';
-	
+
+die("Inscriptions fermées");
 	
 ?>
 <!DOCTYPE html>

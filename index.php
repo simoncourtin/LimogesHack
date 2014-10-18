@@ -105,52 +105,53 @@
                 <div class="container fadeIn">
                     <section id="inscription">
                         <h2>S'inscrire</h2>
-                        <p class="text-center">Si vous êtes intéressé, vous savez ce qu'il vous reste à faire, c'est gratuit !</p>
+			<p>Désolé, les inscriptions sont fermées ! La prochaine itération aura lieu début 2015. Surveillez le compte Twitter !</p>
+			<!-- <p class="text-center">Si vous êtes intéressé, vous savez ce qu'il vous reste à faire, c'est gratuit !</p>
                         <form action="register" method="post" id="registerForm">
-                            <h3>Votre projet</h3>
-                            <label for="titre">Nom du projet</label>
-                            <input type="text" name="titre" id="titre" placeholder="Nom du projet">
-                            <label for="projet">Description du projet</label>
-                            <textarea name="projet" id="projet" placeholder="Description du projet"></textarea>
-                                
-                            <h3>Votre équipe</h3>
-                            <label for="equipe">Nom de l'équipe</label>
-                            <input type="text" name="equipe" id="equipe" placeholder="Nom de l'équipe">
-                            <h4>Chef de projet</h4>
-                            <div class="row">
-                                <div class="col-3">
-                                    <input type="text" name="prenom0" id="prenom0" placeholder="Prénom">
-                                </div>
-                                <div class="col-3">
-                                    <input type="text" name="nom0" id="nom0" placeholder="Nom">
-                                </div>
-                                <div class="col-3">
-                                    <input type="email" name="mail0" id="mail0" placeholder="Adresse e-mail">
-                                </div>
-                            </div>
-                            <h4>Autres membres</h4>
-                            <div id="userPanel">
-                                <div class="row" id="user-1">
-                                    <div class="col-3">
-                                        <input type="text" name="prenom1" id="prenom1" placeholder="Prénom">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" name="nom1" id="nom1" placeholder="Nom">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="email" name="mail1" id="mail1" placeholder="Adresse e-mail">
-                                    </div>
-                                </div>
-                            </div>
-                                
-                            <div class="text-center">
-                                <button type="button" class="button button-grey" name="addUser" id="addUser">+ Ajouter un membre</button>
-                            </div>
-                            
-                            <div class="text-center">
-                                <button type="submit" name="registerBtn" id="registerBtn">S'inscrire</button>
-                            </div>
-                        </form>
+                        <h3>Votre projet</h3>
+                        <label for="titre">Nom du projet</label>
+                        <input type="text" name="titre" id="titre" placeholder="Nom du projet">
+                        <label for="projet">Description du projet</label>
+                        <textarea name="projet" id="projet" placeholder="Description du projet"></textarea>
+                        
+                        <h3>Votre équipe</h3>
+                        <label for="equipe">Nom de l'équipe</label>
+                        <input type="text" name="equipe" id="equipe" placeholder="Nom de l'équipe">
+                        <h4>Chef de projet</h4>
+                        <div class="row">
+                        <div class="col-3">
+                        <input type="text" name="prenom0" id="prenom0" placeholder="Prénom">
+                        </div>
+                        <div class="col-3">
+                        <input type="text" name="nom0" id="nom0" placeholder="Nom">
+                        </div>
+                        <div class="col-3">
+                        <input type="email" name="mail0" id="mail0" placeholder="Adresse e-mail">
+                        </div>
+                        </div>
+                        <h4>Autres membres</h4>
+                        <div id="userPanel">
+                        <div class="row" id="user-1">
+                        <div class="col-3">
+                        <input type="text" name="prenom1" id="prenom1" placeholder="Prénom">
+                        </div>
+                        <div class="col-3">
+                        <input type="text" name="nom1" id="nom1" placeholder="Nom">
+                        </div>
+                        <div class="col-3">
+                        <input type="email" name="mail1" id="mail1" placeholder="Adresse e-mail">
+                        </div>
+                        </div>
+                        </div>
+                        
+                        <div class="text-center">
+                        <button type="button" class="button button-grey" name="addUser" id="addUser">+ Ajouter un membre</button>
+                        </div>
+                        
+                        <div class="text-center">
+                        <button type="submit" name="registerBtn" id="registerBtn">S'inscrire</button>
+                        </div>
+                        </form> -->
                     </section>
                 </div>
             </div>
